@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+
+    <!-- Load the QUnit CSS file from CDN - Require to display our tests attractively -->
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.11.0/qunit.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+
+    <title>New York Times COVID Data</title>
+    <!-- D3 Data Load -->
+    <script src="assets/js/loadData.js"></script>
+    <!-- D3 multi line chart -->
+    <script type="module" src="assets/js/linechart.js"></script>
+    <script type="module" src="assets/js/colorLegend.js"></script>
+    <!-- <script src="assets/js/chart.js"></script> -->
+    <!-- <script>
+        window.onload = function () {
+            readData("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv", "#covid");
+        };
+
+    </script> -->
+  </head>
+
+  <!-- <body> -->
+
+  <body style="margin: 0 1em;">
+    <div id="main">
+      <h1>Load COVID19 data <em>Massachusetts Counties</em></h1>
+      <h2>
+        Read csv NewYork Times (<em>COVID19 Pandemic Data</em>) return Cases and
+        Death Counts for Massachusetts Counties.
+      </h2>
+    </div>
+
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <!-- Load the QUnit Testing Framework from CDN - this is the important bit ... -->
+    <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+    <script>
+      // This is what a simple unit test looks like:
+      test("Test URL link to New York Times COVID19 Data", function (assert) {
+        var url =
+          "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
+        assert.equal(
+          url,
+          "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
+        ); // just so we know everything loaded ok
+      });
+      // A failing test will be RED:
+      test("Test Data is returned from URL link to New York Times COVID19 Data ", function (assert) {
+        var http_response = 200; // this should be 0
+        assert.equal(http_response, 200); // we *expect* this to fail
+      });
+
+      test("Data exits", function (assert) {
+        var http_status = 200;
+        assert.equal(http_status, 404);
+      });
+    </script>
+
+    <svg width="960" height="500"></svg>
+
+    <!-- chart
+    <div id="chart">
+        <svg>
+
+        </svg>
+    </div>
+    -->
+
+    <!-- map -->
+    <!-- <div>
+        <svg id="map">
+
+        </svg>
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
