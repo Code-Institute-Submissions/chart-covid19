@@ -17,6 +17,10 @@ const svg = d3.select("svg");
 const width = +svg.attr("width");
 const height = +svg.attr("height");
 
+//selected Date
+var parseTime = d3.timeParse("%B %d, %Y");
+const selectedDate = parseTime("June 30, 2020");
+
 //accessor functions
 const render = (data) => {
   const title = "Massachusetts Covid-19 Cases by County";
@@ -115,6 +119,14 @@ const render = (data) => {
     .attr("class", "line-path")
     .attr("d", (d) => lineGenerator(d.values))
     .attr("stroke", (d) => colorScale(d.key));
+
+  // selectedDate
+  g.append("line")
+    .attr("class", "selected-date-line")
+    .attr("x1", xScale(selectedDate))
+    .attr("x2", xScale(selectedDate))
+    .attr("y1", 0)
+    .attr("y2", innerHeight);
 
   //bandwidth compute width of a single bar
   // 	g.selectAll('circle').data(data)
