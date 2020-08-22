@@ -137,6 +137,18 @@ const render = (data) => {
 
   g.append("text").attr("class", "title").attr("y", -10).text(title);
 
+  //Add invisible rectangle element for select date pointer area and mouse event listener
+  g.append("rect")
+    .attr("width", innerWidth)
+    .attr("height", innerHeight)
+    .attr("fill", "none")
+    .attr("pointer-events", "all")
+    .on("mousemove", () => {
+      const x = d3.mouse(g.node())[0];
+      const hoveredDate = xScale.invert(x);
+      console.log(hoveredDate);
+    });
+
   svg.append("g").attr("transform", `translate(780,75)`).call(colorLegend, {
     colorScale,
     circleRadius: 10,
