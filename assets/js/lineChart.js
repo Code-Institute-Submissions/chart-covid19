@@ -57,7 +57,7 @@ export const lineChart = (selection, props) => {
   // console.log(yScale.range());
 
   const g = selection.selectAll(".container").data([null]);
-  const gEnter = g.enter().append("g");
+  const gEnter = g.enter().append("g").attr("class", "container");
   gEnter.merge(g).attr("transform", `translate(${margin.left},${margin.top})`);
 
   const xAxis = d3.axisBottom(xScale).tickSize(-innerHeight).tickPadding(15);
