@@ -7,32 +7,33 @@
 //     axisLeft,
 //     axisBottom,
 //     line,
-//     curveBasis
+//     curveBasis,
+//     nest,
+//     schemeAccent,
+//     descending,
+//     format,
+//     mouse
 // } from 'd3';
+import { parseTime, selectedDate } from "./index.js";
 
-import { colorLegend } from "./colorLegend.js";
+export const lineChart = (selection, props) => {
+  const {
+    colorScale,
+    yValue,
+    title,
+    xValue,
+    xAxisLabel,
+    circleRadius,
+    yAxisLabel,
+    margin,
+    width,
+    height,
+    data,
+    nested,
+    selectedDate,
+    setSelectedDate,
+  } = props;
 
-const svg = d3.select("svg");
-
-const width = +svg.attr("width");
-const height = +svg.attr("height");
-
-//selected Date
-var parseTime = d3.timeParse("%B %d, %Y");
-const selectedDate = parseTime("June 30, 2020");
-
-//accessor functions
-const render = (data) => {
-  const title = "Massachusetts Covid-19 Cases by County";
-
-  const xValue = (d) => d.date;
-  const xAxisLabel = "Time";
-
-  const yValue = (d) => d.cases;
-  const yAxisLabel = "Cases";
-  const circleRadius = 6;
-
-  const margin = { top: 60, right: 200, bottom: 88, left: 130 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -51,45 +52,53 @@ const render = (data) => {
     .range([innerHeight, 0])
     .nice();
 
-  const colorScale = d3.scaleOrdinal(d3.schemeAccent);
+  // const colorScale = d3.scaleOrdinal(d3.schemeAccent);
   // console.log(yScale.domain());
   // console.log(yScale.range());
 
-  const g = svg
-    .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
+  const g = selection.selectAll(".container").data([null]);
+  const gEnter = g.enter().append("g");
+  gEnter.merge(g).attr("transform", `translate(${margin.left},${margin.top})`);
 
   const xAxis = d3.axisBottom(xScale).tickSize(-innerHeight).tickPadding(15);
 
   const yAxis = d3.axisLeft(yScale).tickSize(-innerWidth).tickPadding(10);
 
-  const yAxisG = g.append("g").call(yAxis);
+  const yAxisGEnter = gEnter.append("g").attr("class", "y-axis");
 
-  yAxisG.selectAll(".domain").remove();
+  const yAxisG = g.select(".y-axis");
 
-  yAxisG
+  yAxisGEnter.merge(yAxisG).call(yAxis).selectAll(".domain").remove();
+
+  yAxisGEnter
     .append("text")
     .attr("class", "axis-label")
     .attr("y", -80)
-    .attr("x", -innerHeight / 2)
     .attr("fill", "black")
     .attr("transform", `rotate(-90)`)
     .attr("text-anchor", "middle")
+    .merge(yAxisG.select(".axis-label"))
+    .attr("x", -innerHeight / 2)
     .text(yAxisLabel);
 
-  const xAxisG = g
-    .append("g")
+  const xAxisGEnter = gEnter.append("g").attr("class", "x-axis");
+
+  const xAxisG = g.select(".x-axis");
+
+  xAxisGEnter
+    .merge(xAxisG)
     .call(xAxis)
-    .attr("transform", `translate(0,${innerHeight})`);
+    .attr("transform", `translate(0,${innerHeight})`)
+    .select(".domain")
+    .remove();
 
-  xAxisG.select(".domain").remove();
-
-  xAxisG
+  xAxisGEnter
     .append("text")
     .attr("class", "axis-label")
     .attr("y", 75)
-    .attr("x", innerWidth / 2)
     .attr("fill", "black")
+    .merge(xAxisG.select(".axis-label"))
+    .attr("x", innerWidth / 2)
     .text(xAxisLabel);
 
   const lineGenerator = d3
@@ -98,34 +107,24 @@ const render = (data) => {
     .y((d) => yScale(yValue(d)))
     .curve(d3.curveBasis);
 
-  // yValue of the last entry for each county
-  const lastYValue = (d) => yValue(d.values[d.values.length - 1]);
-
-  // console.log(lastYValue);
-
-  const nested = d3
-    .nest()
-    .key((d) => d.county)
-    .entries(data)
-    .sort((a, b) => d3.descending(lastYValue(a), lastYValue(b)));
-
-  // console.log(nested);
-
   //data join
-  g.selectAll(".line-path")
-    .data(nested)
+  const linePaths = g.merge(gEnter).selectAll(".line-path").data(nested);
+
+  linePaths
     .enter()
     .append("path")
     .attr("class", "line-path")
+    .merge(linePaths)
     .attr("d", (d) => lineGenerator(d.values))
     .attr("stroke", (d) => colorScale(d.key));
 
-  // selectedDate
-  g.append("line")
+  gEnter
+    .append("line")
     .attr("class", "selected-date-line")
+    .attr("y1", 0)
+    .merge(g.select(".selected-date-line"))
     .attr("x1", xScale(selectedDate))
     .attr("x2", xScale(selectedDate))
-    .attr("y1", 0)
     .attr("y2", innerHeight);
 
   //bandwidth compute width of a single bar
@@ -134,43 +133,26 @@ const render = (data) => {
   //   		.attr('cy', d => yScale(yValue(d)))
   //   		.attr('cx', d => xScale(xValue(d)))
   //   		.attr('r', circleRadius);
-
-  g.append("text").attr("class", "title").attr("y", -10).text(title);
+  gEnter
+    .append("text")
+    .attr("class", "title")
+    .attr("y", -10)
+    .merge(g.select(".title"))
+    .text(title);
 
   //Add invisible rectangle element for select date pointer area and mouse event listener
-  g.append("rect")
-    .attr("width", innerWidth)
-    .attr("height", innerHeight)
+  gEnter
+    .append("rect")
+    .attr("class", "mouse-interceptor")
     .attr("fill", "none")
     .attr("pointer-events", "all")
-    .on("mousemove", () => {
-      const x = d3.mouse(g.node())[0];
+    .merge(g.select(".mouse-interceptor"))
+    .attr("width", innerWidth)
+    .attr("height", innerHeight)
+    .on("mousemove", function () {
+      const x = d3.mouse(this)[0];
+      //capture pixel coordinate with date from the xScale
       const hoveredDate = xScale.invert(x);
-      console.log(hoveredDate);
+      setSelectedDate(hoveredDate);
     });
-
-  svg.append("g").attr("transform", `translate(780,75)`).call(colorLegend, {
-    colorScale,
-    circleRadius: 10,
-    spacing: 23,
-    textOffset: 20,
-  });
 };
-
-//Data Table
-d3.csv(
-  "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
-).then((data) => {
-  // console.log(data);
-  const MASSDATA = data.filter(function (d) {
-    return d.state == "Massachusetts";
-  });
-
-  MASSDATA.forEach((d) => {
-    d.date = new Date(d.date);
-    d.cases = +d.cases;
-    d.deaths = +d.deaths;
-  });
-
-  render(MASSDATA);
-});
