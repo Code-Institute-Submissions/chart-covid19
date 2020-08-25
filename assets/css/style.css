@@ -1,0 +1,22 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+.counties {
+  fill: aqua;
+  stroke: black;
+  stroke-opacity: 0.2;
+}
+
+.counties:hover {
+  fill: rgb(255, 0, 149);
+}
+
+/* 
+.state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}  */
