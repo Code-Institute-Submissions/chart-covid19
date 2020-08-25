@@ -9,14 +9,21 @@ const pathGenerator = d3.geoPath().projection(null);
 d3.json(
   "https://cdn.jsdelivr.net/npm/us-atlas@3.0.0/counties-albers-10m.json"
 ).then((data) => {
-  console.log(data);
+  //   console.log(data);
   const counties = topojson.feature(data, data.objects.counties);
-  console.log(counties);
+  //   console.log(counties.properties);
 
   //data join
-  const path = svg.selectAll("path").data(counties.features);
   //append
-  path.enter().append("path").attr("d", pathGenerator);
-
-  //   const states = 25;
+  svg
+    .selectAll("path")
+    .data(counties.features)
+    .enter()
+    .append("path")
+    .attr("class", "counties")
+    .attr("d", pathGenerator)
+    .append("title")
+    .text((d) => d.properties.name);
 });
+
+// properties name
