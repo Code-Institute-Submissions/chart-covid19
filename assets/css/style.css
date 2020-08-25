@@ -6,7 +6,7 @@ body {
 .counties {
   fill: aqua;
   stroke: black;
-  stroke-opacity: 0.2;
+  stroke-width: 0.05px;
 }
 
 .counties:hover {
