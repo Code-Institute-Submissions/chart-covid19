@@ -1,4 +1,4 @@
-// import { select, json, geoPath, geoNaturalEarth1, zoom, event} from 'd3';
+// import { select, json, geoPath, geoNaturalEarth1, zoom, event,scaleOrdinal, schemeCategory10} from 'd3';
 // import { feature } from 'topojson';
 // console.log(document.body.clientWidth);
 // console.log(document.body.clientHeight);
@@ -25,7 +25,13 @@ svg.call(
   })
 );
 
+const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+// const colorValue = (d) => d.county;
+
 loadAndProcessData().then((counties) => {
+  //   colorScale.domain(counties.features.map(colorValue));
+
   //data join
   //append
   g.selectAll("path")
@@ -34,9 +40,11 @@ loadAndProcessData().then((counties) => {
     .append("path")
     .attr("class", "counties")
     .attr("d", pathGenerator)
-    .attr("fill", "aqua")
-    .append("title")
-    .text((d) => d.properties.name);
+    .attr("fill", (d) => colorScale(d.properties.name))
+    .attr(
+      "fill",
+      "county".append("title").text((d) => d.properties.name)
+    );
   // .text((d) => console.log(d.id));
   // .text((d) => covidByFips[d.id].county);
 });
