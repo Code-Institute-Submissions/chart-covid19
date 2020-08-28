@@ -26,11 +26,18 @@ svg.call(
 );
 
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-
-// const colorValue = (d) => d.county;
+const colorValue = (d) => parseInt(d.properties.cases);
 
 loadAndProcessData().then((counties) => {
-  //   colorScale.domain(counties.features.map(colorValue));
+  colorScale
+    // remove duplicate category by cases counts
+    .domain(counties.features.map(colorValue))
+    // numeric sort of category by counts
+    .domain()
+    .sort((a, b) => a - b);
+
+  // Validate sort order of category by number of cases
+  //   console.log(colorScale.domain().sort((a, b) => a - b));
 
   //data join
   //append
@@ -40,11 +47,12 @@ loadAndProcessData().then((counties) => {
     .append("path")
     .attr("class", "counties")
     .attr("d", pathGenerator)
-    .attr("fill", (d) => colorScale(d.properties.name))
-    .attr(
-      "fill",
-      "county".append("title").text((d) => d.properties.name)
-    );
+    .attr("fill", (d) => colorScale(colorValue(d)))
+    // .attr("fill", (d) => colorScale(d.properties.name))
+    // .attr("fill", (d) => colorScale(d.properties.state))
+    // .attr("fill","county")
+    .append("title")
+    .text((d) => d.properties.name);
   // .text((d) => console.log(d.id));
   // .text((d) => covidByFips[d.id].county);
 });
