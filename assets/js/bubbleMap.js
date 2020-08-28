@@ -25,7 +25,9 @@ svg.call(
   })
 );
 
+//color with order
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+// const colorScale = d3.scaleOrdinal();
 const colorValue = (d) => parseInt(d.properties.cases);
 
 loadAndProcessData().then((counties) => {
@@ -35,9 +37,11 @@ loadAndProcessData().then((counties) => {
     // numeric sort of category by counts
     .domain()
     .sort((a, b) => a - b);
+  // .range(d3.schemeSpectral[parseInt(colorScale.domain().length)]);
 
   // Validate sort order of category by number of cases
-  //   console.log(colorScale.domain().sort((a, b) => a - b));
+  console.log(colorScale.domain().sort((a, b) => a - b));
+  console.log(colorScale.domain().length);
 
   //data join
   //append
@@ -52,7 +56,7 @@ loadAndProcessData().then((counties) => {
     // .attr("fill", (d) => colorScale(d.properties.state))
     // .attr("fill","county")
     .append("title")
-    .text((d) => d.properties.name);
+    .text((d) => d.properties.name + "\n Covid19 Cases: " + d.properties.cases);
   // .text((d) => console.log(d.id));
   // .text((d) => covidByFips[d.id].county);
 });
