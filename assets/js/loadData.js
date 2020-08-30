@@ -1,5 +1,5 @@
 //Data Table
-// function readData() {
+export function readData() {
 d3.csv(
   "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
 )
@@ -21,4 +21,4 @@ d3.csv(
   .catch((error) =>
     console.log("Error:", error.message)
   ); /* called when  there is an error anywhere and also takes a callback if there is an error*/
-// }
+}
