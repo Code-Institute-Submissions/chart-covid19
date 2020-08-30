@@ -9,8 +9,8 @@ export const loadAndProcessData = () =>
       "https://cdn.jsdelivr.net/npm/us-atlas@3.0.0/counties-albers-10m.json"
     ),
   ]).then(([covid19Data, topoJSONdata]) => {
-    //   console.log(covid19Data);
-    //   console.log(topoJSONdata);
+    console.log(covid19Data);
+    console.log(topoJSONdata);
 
     //   build a reference table covid19 row county name using fips
     //   const countyName = {};
@@ -32,7 +32,24 @@ export const loadAndProcessData = () =>
     //attach covid19 row and assign it onto counties
     counties.features.forEach((d) => {
       Object.assign(d.properties, covidByFips[d.id]);
+      //   d.properties[Date.parse("2020-08-28")] =
+      //     d.properties[Date.parse("2020-08-28")];
     });
 
+    // const featuresWithCases = counties.features
+    //   .filter((d) => d.properties[Date.parse("2020-08-28")])
+    //   .map((d) => {
+    //     d.properties[Date.parse("2020-08-28")] =
+    //       d.properties[Date.parse("2020-08-28")];
+    //     return d;
+    //   });
+
+    console.log(counties);
+
     return counties;
+
+    // return {
+    //   features: counties.features,
+    //   featuresWithCases,
+    // };
   });
