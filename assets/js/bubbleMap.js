@@ -6,7 +6,7 @@
 // const width = document.body.clientWidth;
 // const height = document.body.clientHeight;
 
-import { readData } from "./loadData.js";
+// import { readData } from "./loadData.js";
 import { loadAndProcessData } from "./loadAndProcessData.js";
 
 const svg = d3.select("svg");
