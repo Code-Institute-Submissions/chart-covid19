@@ -30,3 +30,26 @@ Audience: Adult individuals who are non-technical and do not have a quantitative
 - As a user I want to be able to select a specific date to report the number of cases by location
 - As a user I want to be able to select a location and get the count of Covid19 cases
 - As a user I want to be able to select a location and time range to see the trend of Covid19 cases
+
+## Develpment Planes
+
+### Strategy Plane - User Needs and Business Objective
+
+Develop a minimal viable product for a non-technical audience with realtime COVID19 cases by Massachusetts counties taken from a reputable data source.
+
+Users will be able to interact with the data for specific dates.
+
+The scope is to solely display the data as-is to the user to support decisions that are meaningful to them.
+
+- Research and drafted initial project for COVID19 chart for non-technical users.
+- Drafted initial project goal, scope and features using D3, TDD, Travis CI Javascript, HTML, CSS based on MS2 requirements and MS1 feedback
+- Review and discuss the feasibility of learning D3 and implementing a simple dashboard with my mentor. The targeting 4-5 weeks project completion timeline
+
+### Identify Business Goals and Objectives
+
+- Build a chart to visualize population trends by location over time
+- User interaction will be enabled for date selection to display information
+- Present information clearly to minimize cognitive load required to understand the information
+- Data is presented to inform and support decision making for users
+- Dynamic Data-driven chart that will update automatically with the release of new data
+- Chart will scale and adjust automatically based on data
