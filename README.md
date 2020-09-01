@@ -79,24 +79,53 @@ The scope is to solely display the data as-is to the user to support decisions t
 
 #### Extended Features for future Implementation
 
-- Mockups
-  - [Pannable Chart Mockup]()
-  - [Line Chart Mockup]()
-  - [Bubble Map Mockup]()
-
-* Alert of new Covid19 Cases based on user location default to Boston
+- Alert of new Covid19 Cases based on user location default to Boston
   - Simple Message at the top of page
-* Line Chart with Brush Zoom Axis Label
+- Line Chart with Brush Zoom Axis Label
   https://observablehq.com/@d3/focus-context
-* Bubble Map
+- Bubble Map
   https://observablehq.com/@d3/bubble-map
-* Bubble Map with scrubber and Dropdown
+- Bubble Map with scrubber and Dropdown
   https://observablehq.com/@mbostock/covid-19-daily-new-cases
 
-* A bar chart count of Covid19 cases by State or counties
+- A bar chart count of Covid19 cases by State or counties
   - Tooltip
     http://bl.ocks.org/mstanaland/6100713
   - Zoomable bar chart
     https://observablehq.com/@d3/zoomable-bar-chart
   - Pannable bar chart
     https://observablehq.com/@d3/pannable-chart
+
+### Structure Plane
+
+Interaction design and Information Architecture
+
+Objective: Maintain traceability of components to business requirements
+
+Special Note: Features were scaled back significantly constrained by the steep learning curve of D3, JSON, GeoJSON, Javascript ES6, NodeJS, NPM and related technologies.
+
+#### Mockups
+
+- [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/c917ed8813d716f7bb03a9f063d0ad07cd521b6d/assets/wireframes/LineChartMockup.jpg)
+- [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/c917ed8813d716f7bb03a9f063d0ad07cd521b6d/assets/wireframes/PannableChartMockup.png)
+- [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/c917ed8813d716f7bb03a9f063d0ad07cd521b6d/assets/wireframes/BubbleMapMockup.png)
+
+#### Functional Specifications
+
+- Mobile-first design for line chart visibility using the entire device viewport
+- Mechanism for user input simple point and click
+- Tooltip information is visible when rendered
+- Color of lines use d3.schemeAccent for the sorted ordinal representation of counties
+- Dynamic update of chart and information is automatic when new data is released
+- Application components are structured using javascript modules and functions to maximize ease deployment and code maintenance
+
+#### Functional Requirements excluded due to scale back
+
+- Synchronize chart and map when user interaction is invoked
+- Render alerts to the user of data update with summary information
+- Enable user interaction mechanisms to select a time-period to display data of interest
+- Enable user interaction to select the type of data to display
+- Render messages to user when unable to access to endpoints
+- Handling missing data and anomalies
+- Application error handling to facilitate capture adn report application failures
+- Test Driven Design development applied to a simple module and function using Travis CI
