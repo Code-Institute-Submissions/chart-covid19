@@ -53,3 +53,38 @@ The scope is to solely display the data as-is to the user to support decisions t
 - Data is presented to inform and support decision making for users
 - Dynamic Data-driven chart that will update automatically with the release of new data
 - Chart will scale and adjust automatically based on data
+
+### Scope Plane
+
+#### Features with Interactivity
+
+- Line chart to display the number of COVID19 cases for each county during the pandemic starting in January 2020
+
+  - User Interface to select a date on a line chart consider a mouseover line for date selection
+    https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
+  - Tooltip for each county
+
+- Choropleth Map
+  - Zoomable
+  - Panbable
+  - Tooltip
+  - Synchronize with user date selection from line chart
+
+#### Extended Features for future Implementation
+
+- Alert of new Covid19 Cases based on user location default to Boston
+  - Simple Message at the top of page
+- Line Chart with Brush Zoom Axis Label
+  https://observablehq.com/@d3/focus-context
+- Bubble Map
+  https://observablehq.com/@d3/bubble-map
+- Bubble Map with scrubber and Dropdown
+  https://observablehq.com/@mbostock/covid-19-daily-new-cases
+
+- A bar chart count of Covid19 cases by State or counties
+  - Tooltip
+    http://bl.ocks.org/mstanaland/6100713
+  - Zoomable bar chart
+    https://observablehq.com/@d3/zoomable-bar-chart
+  - Pannable bar chart
+    https://observablehq.com/@d3/pannable-chart
