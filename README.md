@@ -31,7 +31,7 @@ Audience: Adult individuals who are non-technical and do not have a quantitative
 - As a user I want to be able to select a location and get the count of Covid19 cases
 - As a user I want to be able to select a location and time range to see the trend of Covid19 cases
 
-## Develpment Planes
+## Development Planes
 
 ### Strategy Plane - User Needs and Business Objective
 
@@ -56,6 +56,13 @@ The scope is to solely display the data as-is to the user to support decisions t
 
 ### Scope Plane
 
+#### Personas
+
+- Non-Technical Audience Personas
+  - General Public Individual
+  - Resident of a County
+  - Service Provider Planner
+
 #### Features with Interactivity
 
 - Line chart to display the number of COVID19 cases for each county during the pandemic starting in January 2020
@@ -72,16 +79,21 @@ The scope is to solely display the data as-is to the user to support decisions t
 
 #### Extended Features for future Implementation
 
-- Alert of new Covid19 Cases based on user location default to Boston
+- Mockups
+  - [Pannable Chart Mockup]()
+  - [Line Chart Mockup]()
+  - [Bubble Map Mockup]()
+
+* Alert of new Covid19 Cases based on user location default to Boston
   - Simple Message at the top of page
-- Line Chart with Brush Zoom Axis Label
+* Line Chart with Brush Zoom Axis Label
   https://observablehq.com/@d3/focus-context
-- Bubble Map
+* Bubble Map
   https://observablehq.com/@d3/bubble-map
-- Bubble Map with scrubber and Dropdown
+* Bubble Map with scrubber and Dropdown
   https://observablehq.com/@mbostock/covid-19-daily-new-cases
 
-- A bar chart count of Covid19 cases by State or counties
+* A bar chart count of Covid19 cases by State or counties
   - Tooltip
     http://bl.ocks.org/mstanaland/6100713
   - Zoomable bar chart
