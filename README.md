@@ -106,9 +106,9 @@ Special Note: Features were scaled back significantly constrained by the steep l
 
 #### Mockups
 
-- [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/c917ed8813d716f7bb03a9f063d0ad07cd521b6d/assets/wireframes/LineChartMockup.jpg)
-- [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/c917ed8813d716f7bb03a9f063d0ad07cd521b6d/assets/wireframes/PannableChartMockup.png)
-- [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/c917ed8813d716f7bb03a9f063d0ad07cd521b6d/assets/wireframes/BubbleMapMockup.png)
+- [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
+- [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
+- [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
 
 #### Functional Specifications
 
