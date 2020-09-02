@@ -58,43 +58,79 @@ The scope is to solely display the data as-is to the user to support decisions t
 
 #### Personas
 
-- Non-Technical Audience Personas
-  - General Public Individual
-  - Resident of a County
-  - Service Provider Planner
+* Non-Technical Audience Personas
+  * General Public Individual
+  * Resident of a County
+  * Service Provider Planner
 
 #### Features with Interactivity
 
-- Line chart to display the number of COVID19 cases for each county during the pandemic starting in January 2020
+* Line chart to display the number of COVID19 cases for each county during the pandemic starting in January 2020
+  * User Interface to select a date on a line chart consider a mouseover line for date selection
+https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
+  * Tooltip for each county
 
-  - User Interface to select a date on a line chart consider a mouseover line for date selection
-    https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
-  - Tooltip for each county
-
-- Choropleth Map
-  - Zoomable
-  - Panbable
-  - Tooltip
-  - Synchronize with user date selection from line chart
+* Choropleth Map
+  * Zoomable
+  * Pannable
+  * Tooltip
+  * Synchronize with user date selection from line chart
 
 #### Extended Features for future Implementation
 
-- Alert of new Covid19 Cases based on user location default to Boston
-  - Simple Message at the top of page
-- Line Chart with Brush Zoom Axis Label
-  https://observablehq.com/@d3/focus-context
-- Bubble Map
-  https://observablehq.com/@d3/bubble-map
-- Bubble Map with scrubber and Dropdown
-  https://observablehq.com/@mbostock/covid-19-daily-new-cases
+* Alert of new Covid19 Cases based on user location default to Boston
+* Notification at the top of the page to publish latest data release information
+* Line Chart with Brush Zoom Axis Label
+https://observablehq.com/@d3/focus-context
+* Bubble Map
+https://observablehq.com/@d3/bubble-map
+* Bubble Map with scrubber and Dropdown
+https://observablehq.com/@mbostock/covid-19-daily-new-cases
 
-- A bar chart count of Covid19 cases by State or counties
-  - Tooltip
-    http://bl.ocks.org/mstanaland/6100713
-  - Zoomable bar chart
-    https://observablehq.com/@d3/zoomable-bar-chart
-  - Pannable bar chart
-    https://observablehq.com/@d3/pannable-chart
+* A bar chart count of Covid19 cases by State or counties
+  * Tooltip
+http://bl.ocks.org/mstanaland/6100713
+  * Zoomable bar chart
+https://observablehq.com/@d3/zoomable-bar-chart
+  * Pannable bar chart
+https://observablehq.com/@d3/pannable-
+
+#### Releases
+
+##### Release 1 (Current)
+
+* Automatic Data load and Processing
+* Multiple Line Chart of Cases for Massachusetts Counties
+* Line to select a specific date
+
+##### Release 2 (Current)
+
+* Choropleth Map of US Counties
+* Zoomable and Pannable
+* Tooltips to render number of Covid cases by county
+
+##### Release 3 (Future)
+
+* Alert of new Covid19 Cases based on user location default to Boston
+* Notification Message at the top of the page for user information stored in the browser session
+
+##### Release 4 (Future)
+
+* Synchronize line chart and Choropleth Map using for the  date selected by the user on the line chart
+* Highlight the counties and render information for the date selected by the user in the tooltips
+* Add Brush Zoom Axis Label to the line chart
+
+##### Release 5 (Future)
+
+* Add bubbles to Choropleth Map sized by counts
+* Add Scrubber with a dropdown to select counties and data for rendering
+
+##### Release 6 (Future)
+
+* Add bar chart for the counts of Covid19 cases by State or counties
+* Tooltip
+* Zoomable
+* Pannable
 
 ### Structure Plane
 
@@ -119,7 +155,7 @@ Special Note: Features were scaled back significantly constrained by the steep l
 - Dynamic update of chart and information is automatic when new data is released
 - Application components are structured using javascript modules and functions to maximize ease deployment and code maintenance
 
-#### Functional Requirements excluded due to scale back
+#### Functional Requirements excluded due to the need to scale back base on current level of knowledge
 
 - Synchronize chart and map when user interaction is invoked
 - Render alerts to the user of data update with summary information
