@@ -138,30 +138,66 @@ Interaction design and Information Architecture
 
 Objective: Maintain traceability of components to business requirements
 
-Special Note: Features were scaled back significantly constrained by the steep learning curve of D3, JSON, GeoJSON, Javascript ES6, NodeJS, NPM and related technologies.
+Special Note: Features were scaled back significantly constrained by the steep learning curve of D3, JSON, topoJSON GeoJSON, Javascript ES6, NodeJS, NPM, and related technologies.
 
 #### Mockups
 
-- [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
-- [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
-- [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
+* [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
+* [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
+* [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
 
 #### Functional Specifications
 
-- Mobile-first design for line chart visibility using the entire device viewport
-- Mechanism for user input simple point and click
-- Tooltip information is visible when rendered
-- Color of lines use d3.schemeAccent for the sorted ordinal representation of counties
-- Dynamic update of chart and information is automatic when new data is released
-- Application components are structured using javascript modules and functions to maximize ease deployment and code maintenance
+* Mobile-first design for line chart visibility using the entire device viewport
+* Mechanism for user input simple point and click
+* Tooltip information is visible when rendered
+* Color of lines use d3.schemeAccent for the sorted ordinal representation of counties
+* Dynamic update of chart and information is automatic when new data is released
+* Application components are structured using javascript modules and functions to maximize ease deployment and code maintenance
 
-#### Functional Requirements excluded due to the need to scale back base on current level of knowledge
+#### Functional Requirements excluded due to limitations of limited current knowledge, skills and time available
 
-- Synchronize chart and map when user interaction is invoked
-- Render alerts to the user of data update with summary information
-- Enable user interaction mechanisms to select a time-period to display data of interest
-- Enable user interaction to select the type of data to display
-- Render messages to user when unable to access to endpoints
-- Handling missing data and anomalies
-- Application error handling to facilitate capture adn report application failures
-- Test Driven Design development applied to a simple module and function using Travis CI
+* Synchronize chart and map when the user selects a period
+* Render alerts to the user of data releases with summary information
+* Enable user interaction to select a period to display data of interest
+* Enable user interaction to choose what information data to display
+* Render messages to the user when unable to access to endpoints
+* Handling missing data and anomalies
+* Application error handling to facilitate capture and report application failures
+* Test Driven Design development approach for a couple of the components using ES6 modules and functions with Travis CI/QUnit
+
+### Surface Plane - Visual Design
+
+#### Existing Features
+
+##### Multiple Line Chart
+
+* Dynamic Data Load
+The user can view the latest data in real-time when information is released and made publicly available.
+
+* D3 Line Chart
+The line chart will adjust dynamically to include new data as it is released.
+
+* Date Selector
+The user can select a date to view data.
+
+##### Choropleth Map US Counties
+
+* Choropleth Map Tooltip
+The user can use the mouse to hover over a county to render a tooltip to display data for that county.
+
+* Choropleth Map by US County
+The user can view data for the latest information when made available.
+
+#### Features Left to Implement
+
+* Handle endpoint access failure with messages rendered to the user
+* Handle data Load and processing error with messages rendered to the user
+* Selector line tooltip for the user can view cases by county for the date selected
+* Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
+
+### Future feature idea
+
+* Alert to provide summary data as of the latest data release
+* Alert to display information based on user data stored in browser session Window.localStorage
+* Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
