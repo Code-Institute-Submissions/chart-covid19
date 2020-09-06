@@ -40,8 +40,8 @@ export const lineChart = (selection, props) => {
   const xScale = d3
     .scaleTime()
     .domain(d3.extent(data, xValue))
-    .range([0, innerWidth])
-    .nice();
+    .range([0, innerWidth]);
+  // .nice();
 
   // console.log(xScale.domain());
   // console.log(xScale.range());
