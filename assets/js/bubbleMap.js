@@ -11,7 +11,7 @@
 import { loadAndProcessData } from "./loadAndProcessData.js";
 // import { sizeLegendMap } from "./sizeLegendMap.js";
 
-const svg = d3.select("svg");
+const svg = d3.select("#map");
 
 // const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
 const projection = d3.geoAlbers();

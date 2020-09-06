@@ -18,7 +18,7 @@ import { readData } from "./loadData.js";
 import { colorLegend } from "./colorLegend.js";
 import { lineChart } from "./lineChart.js";
 
-const svg = d3.select("svg");
+const svg = d3.select("#chart");
 const colorLegendG = svg.append("g");
 const lineChartG = svg.append("g");
 

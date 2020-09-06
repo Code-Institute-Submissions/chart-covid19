@@ -17,6 +17,8 @@
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<script src="https://d3js.org/d3-scale.v3.min.js"></script>
 	<script src="https://d3js.org/d3-axis.v1.min.js"></script>
+	<script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+
 
 	<title>New York Times COVID Data</title>
 	<!-- D3 Data Load -->
@@ -26,6 +28,9 @@
 	<script type="module" src="assets/js/index.js"></script>
 	<script type="module" src="assets/js/lineChart.js"></script>
 	<script type="module" src="assets/js/colorLegend.js"></script>
+	<script type="module" src="./assets/js/loadAndProcessData.js"></script>
+	<script type="module" src="./assets/js/bubbleMap.js"></script>
+
 	<!-- <script type="module" src="assets/js/index.js"></script> -->
 	<!-- <script src="assets/js/chart.js"></script> -->
 	<!-- <script>
@@ -45,11 +50,9 @@
 
 
 	<!-- map -->
-	<!-- <div>
-        <svg id="map">
-
-        </svg>
-    </div> -->
+	<div>
+		<svg width="960" height="500" id="map"></svg>
+	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
