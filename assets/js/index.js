@@ -27,18 +27,17 @@ const height = +svg.attr("height");
 
 export var parseTime = d3.timeParse("%B %d, %Y");
 
-//  State
-let data;
+let trentData;
 // selectedDate
 export let selectedDate = parseTime("June 30, 2020");
 
 const setSelectedDate = (date) => {
   selectedDate = date;
-  render();
+  render(trentData);
 };
 
 //accessor functions
-const render = () => {
+const render = (data) => {
   const yValue = (d) => d.cases;
 
   const colorScale = d3.scaleOrdinal(d3.schemeAccent);
@@ -69,7 +68,7 @@ const render = () => {
     margin: { top: 60, right: 200, bottom: 88, left: 130 },
     width,
     height,
-    data,
+    data: data,
     nested,
     selectedDate,
     setSelectedDate,
@@ -83,22 +82,27 @@ const render = () => {
   });
 };
 
-//Data Table
-d3.csv(
-  "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
-).then((loadedData) => {
-  // console.log(data);
-
-  const MASSDATA = loadedData.filter(function (d) {
-    return d.state == "Massachusetts";
-  });
-
-  MASSDATA.forEach((d) => {
-    d.date = new Date(d.date);
-    d.cases = +d.cases;
-    d.deaths = +d.deaths;
-  });
-
-  data = MASSDATA;
-  render();
+readData().then((d) => {
+  console.log(d);
+  trentData = d;
+  render(trentData);
 });
+
+// d3.csv(
+//   "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
+// ).then((loadedData) => {
+//   // console.log(data);
+
+//   const MASSDATA = loadedData.filter(function (d) {
+//     return d.state == "Massachusetts";
+//   });
+
+//   MASSDATA.forEach((d) => {
+//     d.date = new Date(d.date);
+//     d.cases = +d.cases;
+//     d.deaths = +d.deaths;
+//   });
+
+//   trentData = MASSDATA;
+//   render(trentData);
+// });
