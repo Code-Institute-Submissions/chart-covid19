@@ -1,71 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <!-- Load the QUnit CSS file from CDN - Require to display our tests attractively -->
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.11.0/qunit.css"> -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/images/favicon.png"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
 
-	<!-- Load the QUnit CSS file from CDN - Require to display our tests attractively -->
-	<!-- <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css"> -->
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.11.0/qunit.css"> -->
+    <title>New York Times COVID Data</title>
+    <!-- D3 Data Load -->
+    <!-- <script src="assets/js/loadData.js"></script> -->
+    <!-- D3 multi line chart -->
+    <script type="module" src="assets/js/loadData.js"></script>
+    <script type="module" src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/lineChart.js"></script>
+    <script type="module" src="assets/js/colorLegend.js"></script>
+    <script type="module" src="./assets/js/loadAndProcessData.js"></script>
+    <script type="module" src="./assets/js/bubbleMap.js"></script>
+  </head>
 
-	<link rel="stylesheet" href="assets/css/style.css" />
-	<script src="https://d3js.org/d3.v5.min.js"></script>
-	<script src="https://d3js.org/d3-scale.v3.min.js"></script>
-	<script src="https://d3js.org/d3-axis.v1.min.js"></script>
-	<script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+  <body class="site">
+    <!-- <svg width="960" height="500"></svg> -->
+    <header class="masthead">
+      <h1>A Simple Presentation of Daily COVID19 Pandemic Culumative Cases</h1>
+    </header>
 
+    <div class="page-title">
+      <h1>Charts for Everyone</h1>
+    </div>
+    <!-- .page-title -->
 
-	<title>New York Times COVID Data</title>
-	<!-- D3 Data Load -->
-	<!-- <script src="assets/js/loadData.js"></script> -->
-	<!-- D3 multi line chart -->
-	<script type="module" src="assets/js/loadData.js"></script>
-	<script type="module" src="assets/js/index.js"></script>
-	<script type="module" src="assets/js/lineChart.js"></script>
-	<script type="module" src="assets/js/colorLegend.js"></script>
-	<script type="module" src="./assets/js/loadAndProcessData.js"></script>
-	<script type="module" src="./assets/js/bubbleMap.js"></script>
+    <main class="main-content">
+      <section class="chart-info">
+        <div class="chart-title">
+          <!-- <h1>Charts for Everyone</h1>
+          <h2>
+            A Multi-line chart of Cumulative Cases for counties for the US State
+            of Massachusetts with a date line-selector.<br />
+            A Choropleth Map of the number of cumulative cases and deaths by US
+            counties for a date selected.
+          </h2> -->
 
-	<!-- <script type="module" src="assets/js/index.js"></script> -->
-	<!-- <script src="assets/js/chart.js"></script> -->
-	<!-- <script>
-		window.onload = function () {
-            readData("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv", "#covid");
-        };
-	</script> -->
-</head>
+          <div class="instruct">
+            <h2>
+              Welcome! Explore by selecting a date using the line selector on
+              the chart Proceed to the map and hover your mouse over a county to
+              render the number cumulative number of cases and deaths for that
+              date
+            </h2>
+            <h4>
+              Small Device Usage: Tap on the chart area to move the data
+              selection line
+            </h4>
+            <p>
+              Source:
+              <a href="https://github.com/nytimes/covid-19-data"
+                >New York Times</a
+              >
+              Data Notes:
+              <a href="https://covidtracking.com/data/state/massachusetts"
+                >Massachusetts</a
+              >
+            </p>
+          </div>
+          <!-- .page-title -->
+        </div>
+      </section>
 
-<body>
-	<!-- <svg width="960" height="500"></svg> -->
+      <section class="chart-display">
+        <!-- chart -->
+        <div>
+          <!-- <svg width="960" height="500" id="chart"></svg> -->
+          <svg id="chart" viewBox="0 0 960 500"></svg>
+        </div>
+      </section>
 
-	<!-- chart -->
-	<div>
-		<svg width="960" height="500" id="chart"></svg>
-	</div>
+      <section class="map-info">
+        <div class="map-title">
+          <h1>Coronovirus Cumulative Number of Cases by US Counties</h1>
+          <h4>
+            Pan, Zoom and Hover over county for information <br />
+            Source:
+            <a href="https://github.com/nytimes/covid-19-data"
+              >New York Times</a
+            >
+            Data Notes:
+            <a href="https://covidtracking.com/data/state/massachusetts"
+              >Massachusetts</a
+            >
+          </h4>
+        </div>
+      </section>
+      <!-- Map -->
 
+      <section class="map-display">
+        <div>
+          <!-- <svg width="960" height="500" id="map"></svg> -->
+          <svg id="map" viewBox="0 0 960 500"></svg>
+        </div>
+      </section>
+    </main>
 
-	<!-- map -->
-	<div id="map-title">
-		<h1> Coronovirus Cumulative Number of Cases by US Counties</h1>
-		<p> Pan, Zoom and Hover over
-			county
-			for
-			information <br> Source: <a href="https://github.com/nytimes/covid-19-data">New York Times</a>
-		</p>
-	</div>
+    <footer class="footer-content">
+      <!-- <h4>Footer</h4> -->
+      <!-- <p><span class="bg">Educational Purpose Only</span></p> -->
+      <h4>Educational Purpose Only</h4>
+    </footer>
 
-	<div>
-		<svg width="960" height="500" id="map"></svg>
-	</div>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+  </body>
 </html>
