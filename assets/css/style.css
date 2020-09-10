@@ -1,12 +1,132 @@
-body {
-  margin: 0px;
+@import url("https://fonts.googleapis.com/css?family=Exo|Roboto&display=swap");
+html {
+  scroll-behavior: auto;
 }
 
-#map-title {
-  padding-top: 20px;
+* {
+  /* font-family: "Roboto", sans-serif; */
+  color: black;
+  margin: 0;
+}
+
+/* styling */
+
+.site {
+  max-width: 61em;
+  justify-items: center;
+  padding: 1 em;
+  border: solid;
+  /* margin: 0 auto;
+  /* color: black; */
+  /* margin: 1em; */
+}
+
+.masthead,
+.page-title,
+.main-content,
+.chart-title,
+.chart-info .instruct,
+.chart-display .map-info .map-title,
+.map-display,
+.footer-content {
+  font-family: "Roboto", sans-serif;
+  /* margin-bottom: 1em;
+  padding: 1em; */
+  /* color: white; */
+}
+
+.masthead {
+  background-color: #b46ae3;
+}
+
+/* .main-content {
+  background-color: #f49018;
+} */
+
+.page-title {
+  border: solid;
+  font-size: 1rem;
+  background-color: #51a7fa;
+}
+
+.chart-title {
+  background: #c1c3d4;
+  /* background-color: #70bf40;  */
+}
+
+.chart-display,
+.map-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-title {
+  /* background-color: #70bf40;  */
+  background: #c1c3d4;
+}
+
+/* .chartsvg {
+  background: #c1c3d4;
+} */
+
+.instruct {
+  border: solid;
+  font-weight: bold;
+}
+
+.map-title {
+  border: solid;
+  font-weight: bold;
+  /* font-size: 1rem; */
+  /* padding-top: 20px;
   padding-left: 20px;
   padding-right: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 5px; */
+  /* background: #c1c3d4; */
+}
+
+.footer-content {
+  border: solid;
+  background-color: #51a7fa;
+  color: black;
+  /* color: #c1c3d4; */
+}
+/* 
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+/* Typography */
+
+header {
+  font-family: "Roboto", sans-serif;
+  background: #c1c3d4;
+  /* padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 5px; */
+}
+
+body {
+  margin: 0px;
+  /* margin: 0px; */
+  /* font-family: "Exo", sans-serif; */
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  /* background: #c1c3d4; */
 }
 
 .line-path {
@@ -55,16 +175,35 @@ text {
   fill: rgb(255, 0, 149);
 }
 
-div.tooltip {	
-  position: absolute;			
-  text-align: center;			
-  padding: 5px;				
-  font: 12px sans-serif;		
-  background: lightsteelblue;	
-  border: 0px;		
-  border-radius: 8px;			
-  pointer-events: none;			
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 5px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
 }
+
+/* Responsive Layout for all browsers */
+
+.main-content > * {
+  display: grid;
+}
+
+/* CSS Grid for modern browsers */
+
+@supports (grid-area: auto) {
+  .site {
+    max-width: none;
+  }
+}
+
+/* Global layouts */
+/* @media screen and (min-width: 700px) {
+    }
+} */
 
 /* color legend size legend */
 
