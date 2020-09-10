@@ -12,7 +12,7 @@ import { selectedDate } from "./index.js";
 import { loadAndProcessData } from "./loadAndProcessData.js";
 // import { sizeLegendMap } from "./sizeLegendMap.js";
 
-const svg = d3.select("#map");
+const svg = d3.select("#map").attr("viewBox", `0 0 960 500`);
 
 // const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
 const projection = d3.geoAlbers();
@@ -21,9 +21,11 @@ const pathGenerator = d3.geoPath().projection(null);
 // const radiusValue = (d) => d.properties[Date.parse("2020-08-28")];
 
 //tooltip
-var div = d3.select("body").append("div")	
-    .attr("class", "tooltip")				
-    .style("opacity", 0);
+var div = d3
+  .select("body")
+  .append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0);
 
 const g = svg.append("g");
 // .attr('width', width)
@@ -43,15 +45,15 @@ const colorValue = (d) => parseInt(d.id);
 
 //tootlp render properties
 const renderProperties = (d) => {
-  const date = selectedDate.toISOString().split('T')[0];
+  const date = selectedDate.toISOString().split("T")[0];
   const props = d.properties.dates[date];
 
   if (!props) {
-    return '';
-  } 
+    return "";
+  }
 
   return `County: ${props.county} <br/> Cases: ${props.cases} <br/> Date: ${props.date} <br/> Deaths: ${props.deaths}`;
-}
+};
 
 loadAndProcessData().then((counties) => {
   //   radiusScale
@@ -95,19 +97,16 @@ loadAndProcessData().then((counties) => {
     //     "\n id: " +
     //     d.id
     // );
-    //tooltip mouse eveyt to synch with linechater selected date
-      .on("mouseover", function(d) {
-      div.transition()		
-          .duration(200)		
-          .style("opacity", .9);		
-      div	.html(renderProperties(d))	
-          .style("left", (d3.event.pageX) + "px")		
-          .style("top", (d3.event.pageY - 28) + "px");	
-      })					
-    .on("mouseout", function(d) {		
-        div.transition()		
-            .duration(500)		
-            .style("opacity", 0);	
+    //tooltip mouse event to synch with linechart selected date
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html(renderProperties(d))
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
     });
 
   // .text((d) => console.log(d.id));
