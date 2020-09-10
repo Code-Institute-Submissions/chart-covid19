@@ -18,7 +18,16 @@ import { readData } from "./loadData.js";
 import { colorLegend } from "./colorLegend.js";
 import { lineChart } from "./lineChart.js";
 
-const svg = d3.select("#chart");
+const svg = d3.select("#chart").attr("viewBox", `0 0 960 500`);
+// const svg = d3.select("#chart").attr("viewBox", `0 0 960 500`);
+
+// const svg = d3
+//   .select("div#container")
+//   //   .append("svg")
+//   .attr("preserveAspectRatio", "xMinYMin meet")
+//   .attr("viewBox", "0 0 960 500")
+//   .classed("svg-content", true);
+
 const colorLegendG = svg.append("g");
 const lineChartG = svg.append("g");
 
