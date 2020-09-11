@@ -43,7 +43,7 @@ const colorScale = d3.scaleOrdinal(d3.schemePaired);
 // // const colorScale = d3.scaleOrdinal();
 const colorValue = (d) => parseInt(d.id);
 
-//tootlp render properties
+//tooltip render properties
 const renderProperties = (d) => {
   const date = selectedDate.toISOString().split("T")[0];
   const props = d.properties.dates[date];
@@ -107,6 +107,7 @@ loadAndProcessData().then((counties) => {
     })
     .on("mouseout", function (d) {
       div.transition().duration(500).style("opacity", 0);
+      div.html(null);
     });
 
   // .text((d) => console.log(d.id));

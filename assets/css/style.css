@@ -16,6 +16,8 @@ html {
   justify-items: center;
   padding: 1 em;
   border: solid;
+  /* width: fit-content; */
+
   /* margin: 0 auto;
   /* color: black; */
   /* margin: 1em; */
@@ -25,8 +27,12 @@ html {
 .page-title,
 .main-content,
 .chart-title,
-.chart-info .instruct,
-.chart-display .map-info .map-title,
+.chart-info,
+.instruct,
+.chart-display,
+.selected-date-label,
+.map-info,
+.map-title,
 .map-display,
 .footer-content {
   font-family: "Roboto", sans-serif;
@@ -53,6 +59,13 @@ html {
   background: #c1c3d4;
   /* background-color: #70bf40;  */
 }
+/* 
+.selected-date-label {
+  border: solid;
+  font: bold;
+  background: #c1c3d4;
+  justify-content: center;
+} */
 
 .chart-display,
 .map-display {
@@ -126,6 +139,7 @@ body {
   /* font-family: "Exo", sans-serif; */
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  /* width: fit-content; */
   /* background: #c1c3d4; */
 }
 
@@ -229,3 +243,18 @@ div.tooltip {
   stroke-linejoin: round;
   stroke-linecap: round;
 }  */
+
+/* .svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: top;
+  overflow: hidden;
+}
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
