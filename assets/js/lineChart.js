@@ -16,6 +16,14 @@
 // } from 'd3';
 import { parseTime, selectedDate } from "./index.js";
 
+//tooltip
+const tooltip = d3
+  .select("body")
+  .append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0);
+const selectedDateLabel = d3.select(".selected-date-label");
+
 export const lineChart = (selection, props) => {
   const {
     colorScale,
@@ -153,6 +161,46 @@ export const lineChart = (selection, props) => {
       const x = d3.mouse(this)[0];
       //capture pixel coordinate with date from the xScale
       const hoveredDate = xScale.invert(x);
+      const date = hoveredDate.toISOString().split("T")[0];
+      console.log(hoveredDate);
       setSelectedDate(hoveredDate);
+
+      if (selectedDateLabel.text() !== date) {
+        selectedDateLabel.text(date);
+      } else {
+        selectedDateLabel.text(selectedDate);
+      }
+
+      tooltip.transition().duration(500).style("opacity", 0.9);
+      tooltip
+        .html(date)
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function () {
+      tooltip.transition().duration(200).style("opacity", 0);
+      tooltip.html(null);
     });
 };
+
+// .on("mouseout", function () {
+//   div.transition().duration(500).style("opacity", 0);
+//   div.html(null);
+// });
+// .on("mouseover", function(d) {
+//     div.transition()
+//         .duration(200)
+//         .style("opacity", .9);
+//     div	.html(formatTime(d.date) + "<br/>"  + d.close)
+//         .style("left", (d3.event.pageX) + "px")
+//         .style("top", (d3.event.pageY - 28) + "px");
+//     })
+// .on("mouseout", function(d) {
+//     div.transition()
+//         .duration(500)
+//         .style("opacity", 0);
+// });
+
+// .on("mouseout", function (d) {
+//   div.transition().duration(500).style("opacity", 0);
+// });

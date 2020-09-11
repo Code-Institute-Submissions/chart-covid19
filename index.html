@@ -25,12 +25,12 @@
 
     <title>New York Times COVID Data</title>
     <!-- D3 Data Load -->
-    <!-- <script src="assets/js/loadData.js"></script> -->
-    <!-- D3 multi line chart -->
     <script type="module" src="assets/js/loadData.js"></script>
+    <!-- D3 multi line chart -->
     <script type="module" src="assets/js/index.js"></script>
     <script type="module" src="assets/js/lineChart.js"></script>
     <script type="module" src="assets/js/colorLegend.js"></script>
+    <!-- D3 map -->
     <script type="module" src="./assets/js/loadAndProcessData.js"></script>
     <script type="module" src="./assets/js/bubbleMap.js"></script>
   </head>
@@ -38,7 +38,7 @@
   <body class="site">
     <!-- <svg width="960" height="500"></svg> -->
     <header class="masthead">
-      <h1>A Simple Presentation of Daily COVID19 Pandemic Culumative Cases</h1>
+      <h1>A Simple Presentation of Daily COVID19 Pandemic Cumulative Cases</h1>
     </header>
 
     <div class="page-title">
@@ -60,24 +60,28 @@
           <div class="instruct">
             <h2>
               Welcome! Explore by selecting a date using the line selector on
-              the chart Proceed to the map and hover your mouse over a county to
-              render the number cumulative number of cases and deaths for that
-              date
+              the chart
             </h2>
-            <h4>
+            <h2>
+              Proceed to the map and hover your mouse over a county to view the
+              cumulative number of cases and deaths
+            </h2>
+            <h3>
               Small Device Usage: Tap on the chart area to move the data
               selection line
-            </h4>
-            <p>
+            </h3>
+            <h4>
               Source:
-              <a href="https://github.com/nytimes/covid-19-data"
+              <a href="https://github.com/nytimes/covid-19-data" target="_blank"
                 >New York Times</a
               >
               Data Notes:
-              <a href="https://covidtracking.com/data/state/massachusetts"
+              <a
+                href="https://covidtracking.com/data/state/massachusetts"
+                target="_blank"
                 >Massachusetts</a
               >
-            </p>
+            </h4>
           </div>
           <!-- .page-title -->
         </div>
@@ -86,22 +90,28 @@
       <section class="chart-display">
         <!-- chart -->
         <div>
-          <!-- <svg width="960" height="500" id="chart"></svg> -->
-          <svg id="chart" viewBox="0 0 960 500"></svg>
+          <svg width="960" height="500" id="chart"></svg>
+          <!-- <svg id="chart" viewBox="0 0 960 500"></svg> -->
+          <!-- <p class="selected-date-label"></p> -->
         </div>
       </section>
 
       <section class="map-info">
         <div class="map-title">
           <h1>Coronovirus Cumulative Number of Cases by US Counties</h1>
+          <h2>
+            Pan, Zoom and Hover over county for information
+            <p class="selected-date-label"></p>
+          </h2>
           <h4>
-            Pan, Zoom and Hover over county for information <br />
             Source:
-            <a href="https://github.com/nytimes/covid-19-data"
+            <a href="https://github.com/nytimes/covid-19-data" target="_blank"
               >New York Times</a
             >
             Data Notes:
-            <a href="https://covidtracking.com/data/state/massachusetts"
+            <a
+              href="https://covidtracking.com/data/state/massachusetts"
+              target="_blank"
               >Massachusetts</a
             >
           </h4>
@@ -111,8 +121,8 @@
 
       <section class="map-display">
         <div>
-          <!-- <svg width="960" height="500" id="map"></svg> -->
-          <svg id="map" viewBox="0 0 960 500"></svg>
+          <svg width="960" height="500" id="map"></svg>
+          <!-- <svg id="map" viewBox="0 0 960 500"></svg> -->
         </div>
       </section>
     </main>
