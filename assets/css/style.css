@@ -16,7 +16,7 @@ html {
   justify-items: center;
   padding: 1 em;
   border: solid;
-  /* width: fit-content; */
+  width: fit-content;
 
   /* margin: 0 auto;
   /* color: black; */
@@ -202,17 +202,17 @@ div.tooltip {
 
 /* Responsive Layout for all browsers */
 
-.main-content > * {
+/* .main-content > * {
   display: grid;
-}
+} */
 
 /* CSS Grid for modern browsers */
-
+/* 
 @supports (grid-area: auto) {
   .site {
     max-width: none;
   }
-}
+} */
 
 /* Global layouts */
 /* @media screen and (min-width: 700px) {
