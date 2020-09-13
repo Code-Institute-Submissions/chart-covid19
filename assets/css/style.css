@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css?family=Exo|Roboto&display=swap");
 html {
   scroll-behavior: auto;
@@ -16,6 +23,8 @@ html {
   justify-items: center;
   padding: 1 em;
   border: solid;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 
   /* margin: 0 auto;
@@ -69,8 +78,14 @@ html {
 
 .chart-display,
 .map-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
