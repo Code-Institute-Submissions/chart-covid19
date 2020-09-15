@@ -16,6 +16,13 @@ html {
   margin: 0;
 }
 
+/* Mike Lambert - D3 Slack */
+svg {
+  /* outline: 1px dashed red; */
+  max-width: 100%;
+  height: auto;
+}
+
 /* styling */
 
 .site {
