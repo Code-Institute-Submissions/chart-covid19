@@ -46,89 +46,108 @@
     </div>
     <!-- .page-title -->
 
-    <main class="main-content">
-      <section class="chart-info">
-        <div class="chart-title">
-          <!-- <h1>Charts for Everyone</h1>
-          <h2>
-            A Multi-line chart of Cumulative Cases for counties for the US State
-            of Massachusetts with a date line-selector.<br />
-            A Choropleth Map of the number of cumulative cases and deaths by US
-            counties for a date selected.
-          </h2> -->
+    <!-- <main class="main-content"> -->
+    <!-- <section class="chart-info"> -->
+    <div class="chart-title">
+      <!-- <h1>Charts for Everyone</h1> -->
+      <h2>
+        A Multi-line chart of Cumulative Cases for counties for the US State of
+        Massachusetts with a date line-selector.<br />
+        A Choropleth Map of the number of cumulative cases and deaths by US
+        counties for a date selected.
+      </h2>
+    </div>
 
-          <div class="instruct">
-            <h2>
-              Welcome! Explore by selecting a date using the line selector on
-              the chart
-            </h2>
-            <h2>
-              Proceed to the map and hover your mouse over a county to view the
-              cumulative number of cases and deaths
-            </h2>
-            <h3>
-              Small Device Usage: Tap on the chart area to move the data
-              selection line
-            </h3>
-            <h4>
-              Source:
-              <a href="https://github.com/nytimes/covid-19-data" target="_blank"
-                >New York Times</a
-              >
-              Data Notes:
-              <a
-                href="https://covidtracking.com/data/state/massachusetts"
-                target="_blank"
-                >Massachusetts</a
-              >
-            </h4>
-          </div>
-          <!-- .page-title -->
-        </div>
-      </section>
+    <div class="instruct">
+      <h2>
+        Welcome! Explore by selecting a date using the line selector on the
+        chart
+      </h2>
+    </div>
 
-      <section class="chart-display">
-        <!-- chart -->
-        <div>
-          <svg id="chart" viewBox="0 0 960 500" width="960" height="500"></svg>
-          <!-- <svg width="960" height="500" id="chart"></svg> -->
-          <!-- <svg id="chart" viewBox="0 0 960 500"></svg> -->
-          <!-- <p class="selected-date-label"></p> -->
-        </div>
-      </section>
+    <div class="step1">
+      <h2>
+        Selected Date
+      </h2>
+    </div>
 
-      <section class="map-info">
-        <div class="map-title">
-          <h1>Coronovirus Cumulative Number of Cases by US Counties</h1>
-          <h2>
-            Pan, Zoom and Hover over county for information
-            <p class="selected-date-label"></p>
-          </h2>
-          <h4>
-            Source:
-            <a href="https://github.com/nytimes/covid-19-data" target="_blank"
-              >New York Times</a
-            >
-            Data Notes:
-            <a
-              href="https://covidtracking.com/data/state/massachusetts"
-              target="_blank"
-              >Massachusetts</a
-            >
-          </h4>
-        </div>
-      </section>
-      <!-- Map -->
+    <div class="step2">
+      <h2>
+        Proceed to the map and hover your mouse over a county to view the
+        cumulative number of cases and deaths
+      </h2>
+    </div>
 
-      <section class="map-display">
-        <div>
-          <!-- Mike Lambert - D3 Slack -->
-          <svg id="map" viewBox="0 0 100 100" width="960" height="500"></svg>
-          <!-- <svg width="960" height="500" id="map"></svg> -->
-          <!-- <svg id="map" viewBox="0 0 960 500"></svg> -->
-        </div>
-      </section>
-    </main>
+    <div class="step3">
+      <h2>
+        Repeat Step 1 and 2 to select a different date
+      </h2>
+    </div>
+
+    <div class="chart-info">
+      <h4>
+        Small Device Usage: Tap on the chart area to move the data selection
+        line
+      </h4>
+      <h4>
+        Source:
+        <a href="https://github.com/nytimes/covid-19-data" target="_blank"
+          >New York Times</a
+        >
+        Data Notes:
+        <a
+          href="https://covidtracking.com/data/state/massachusetts"
+          target="_blank"
+          >Massachusetts</a
+        >
+      </h4>
+    </div>
+
+    <!-- .page-title -->
+    <!-- </section> -->
+
+    <!-- <section class="chart-display"> -->
+    <!-- chart -->
+    <div class="chart-display">
+      <svg id="chart" viewbox="0 0 960 500" width="960" height="500"></svg>
+      <!-- <svg width="960" height="500" id="chart"></svg> -->
+      <!-- <svg id="chart" viewBox="0 0 960 500"></svg> -->
+      <!-- <p class="selected-date-label"></p> -->
+    </div>
+    <!-- </section> -->
+
+    <div class="map-title">
+      <h1>Coronovirus Cumulative Number of Cases by US Counties</h1>
+    </div>
+    <div class="map-info">
+      <h2>
+        Pan, Zoom and Hover over county for information
+        <p class="selected-date-label"></p>
+      </h2>
+      <h4>
+        Source:
+        <a href="https://github.com/nytimes/covid-19-data" target="_blank"
+          >New York Times</a
+        >
+        Data Notes:
+        <a
+          href="https://covidtracking.com/data/state/massachusetts"
+          target="_blank"
+          >Massachusetts</a
+        >
+      </h4>
+    </div>
+    <!-- Map -->
+
+    <section class="map-display">
+      <div>
+        <!-- Mike Lambert - D3 Slack -->
+        <svg id="map" viewbox="0 0 100 100" width="960" height="500"></svg>
+        <!-- <svg width="960" height="500" id="map"></svg> -->
+        <!-- <svg id="map" viewBox="0 0 960 500"></svg> -->
+      </div>
+    </section>
+    <!-- </main> -->
 
     <footer class="footer-content">
       <!-- <h4>Footer</h4> -->
