@@ -16,6 +16,14 @@ html {
   margin: 0;
 }
 
+/*--------------------------------------------------------------
+  Typography
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+
 /* Mike Lambert - D3 Slack */
 svg {
   /* outline: 1px dashed red; */
@@ -23,13 +31,11 @@ svg {
   height: auto;
 }
 
-/* styling */
-
 .masthead,
 .page-title,
 /* .main-content, */
 .chart-title,
-.instruct,
+/* .instruct, */
 .step1,
 .step2,
 .step3,
@@ -56,7 +62,7 @@ svg {
 } */
 
 .page-title {
-  border: solid;
+  /* border: solid; */
   font-size: 1rem;
   background-color: #51a7fa;
   grid-area: pagetitle;
@@ -66,17 +72,19 @@ svg {
   background: #c1c3d4;
   /* background-color: #70bf40;  */
   grid-area: charttitle;
-  border: solid;
+  /* border: solid; */
 }
 
-.instruct {
-  border: solid;
+/* .instruct {
   font-weight: bold;
   grid-area: instruct;
-  /* grid-template-columns: 1fr 1fr 1fr;
+  text-align: center; */
+/* border: solid; */
+/* grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto; */
-}
+/* } */
 
+/* 
 .step1 {
   border: solid;
   grid-area: step1;
@@ -90,10 +98,14 @@ svg {
 .step3 {
   border: solid;
   grid-area: step3;
+} */
+
+.cards {
+  grid-area: cards;
 }
 
 .chart-info {
-  border: solid;
+  /* border: solid; */
   grid-area: chartinfo;
 }
 
@@ -162,6 +174,7 @@ svg {
   /* color: #c1c3d4; */
   grid-area: footercontent;
 }
+
 /* 
 .svg-container {
   display: inline-block;
@@ -179,7 +192,9 @@ svg {
   left: 0;
 } */
 
-/* Typography */
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
 
 header {
   font-family: "Roboto", sans-serif;
@@ -199,6 +214,10 @@ body {
   /* width: fit-content; */
   /* background: #c1c3d4; */
 }
+
+/*--------------------------------------------------------------
+D3: Chart and Map
+--------------------------------------------------------------*/
 
 .line-path {
   fill: none;
@@ -257,6 +276,121 @@ div.tooltip {
   pointer-events: none;
 }
 
+/*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+.cards {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.card a {
+  width: 100%;
+  padding: 0 1em;
+  text-align: center;
+  text-decoration: none;
+  background: white;
+  border: 1px transparent;
+  color: hsl(0, 0%, 5%);
+  transition: all 0.2s;
+}
+
+.card a:focus,
+.card a:hover {
+  margin: -5px 5px 5px -5px;
+  box-shadow: 5px 5px 0px 0px hsla(0, 0%, 70%, 0.8);
+}
+
+.step {
+  text-transform: uppercase;
+  color: hsl(201, 63%, 54%);
+}
+
+.stepnum {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.cards h2 {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 0.5em;
+  align-self: flex-end;
+}
+
+.meta {
+  grid-column: 2;
+  grid-row: 2;
+  padding-bottom: 1em;
+}
+
+/*--------------------------------------------------------------
+Cards Grid:
+--------------------------------------------------------------*/
+
+@supports (grid-area: auto) {
+  @media screen and (min-width: 50em) {
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1em;
+    }
+
+    .card {
+      margin-bottom: 0;
+      /* take up full height of vertical space */
+      display: flex;
+    }
+
+    .card a {
+      width: 100%;
+    }
+  }
+  /* individual card grid anchor*/
+  .card a {
+    display: grid;
+    grid-template-columns: 6em auto;
+    grid-template-rows: 1fr 1fr;
+    padding: 0 1em 0 0;
+    /* text-alignment of grid items decendants*/
+    text-align: left;
+  }
+
+  /* componenet grid items placement*/
+  .steps {
+    grid-column: 1;
+    grid-row: 1/3;
+    /* flex vertically */
+    display: flex;
+    flex-direction: column;
+    /* align center */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card h2 {
+    grid-column: 2;
+    grid-row: 1;
+    /* item display end of cell */
+    align-self: flex-end;
+  }
+
+  .meta {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for modern browsers:
+--------------------------------------------------------------*/
 /* Responsive Layout for all browsers */
 
 .site {
@@ -268,10 +402,11 @@ div.tooltip {
     "masthead"
     "pagetitle"
     "charttitle"
-    "instruct"
+    /* "instruct" */
     "step1"
     "step2"
     "step3"
+    "cards"
     "chartinfo"
     "chartdisplay"
     "maptitle"
@@ -305,8 +440,9 @@ div.tooltip {
       "masthead masthead masthead"
       "pagetitle pagetitle pagetitle"
       "charttitle charttitle charttitle"
-      "instruct instruct instruct"
+      /* "instruct instruct instruct" */
       "step1 step2 step3"
+      "cards cards cards"
       "chartinfo chartinfo chartinfo"
       "chartdisplay chartdisplay chartdisplay"
       "maptitle maptitle maptitle"
@@ -332,19 +468,6 @@ div.tooltip {
 
 /* .site {
     display: grid;
-} */
-
-/* CSS Grid for modern browsers */
-/* 
-@supports (grid-area: auto) {
-  .site {
-    max-width: none;
-  }
-} */
-
-/* Global layouts */
-/* @media screen and (min-width: 700px) {
-    }
 } */
 
 /* color legend size legend */
