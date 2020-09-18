@@ -107,6 +107,8 @@ svg {
   display: flex;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  align-items: center;
+  justify-content: center;
 }
 
 /* .logos h2 {
@@ -148,6 +150,9 @@ svg {
   /* background-color: #70bf40;  */
   grid-area: charttitle;
   /* border: solid; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chart-title h2 {
@@ -191,6 +196,9 @@ svg {
   background: #046b99;
   padding: 0.5em 0.5em;
   grid-area: chartinfo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chart-info h4{
@@ -212,6 +220,9 @@ svg {
   background:  #9fd5e3;
   color: #046b99;
   padding: 0.5em 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* background-color: #70bf40;  */
   /* border: solid;
   font-weight: bold; */
@@ -231,6 +242,10 @@ svg {
   background: #046b99;
   padding: 0.5em 0.5em;
   grid-area: mapinfo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .map-info h4{
@@ -271,10 +286,16 @@ svg {
   /* border: solid; */
   /* background-color: #51a7fa; */
   background:   #046b99;
-  color:#9fd5e3;
   padding: 0.5em 0.5em;
+  display: flex;
+      align-items: center;
+    justify-content: center;
   /* color: #c1c3d4; */
   grid-area: footercontent;
+}
+
+.footer-content h4 {
+  color:#FFFAE2;
 }
 
 /* 
