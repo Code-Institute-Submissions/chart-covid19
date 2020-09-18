@@ -32,13 +32,16 @@ hsla(hue(color wheel, lightness,tranparency) */
 */
 
 @import url("https://fonts.googleapis.com/css?family=Exo|Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
 html {
   scroll-behavior: auto;
 }
 
 * {
-  /* font-family: "Roboto", sans-serif; */
-  color: black;
+  font-family: "Roboto", sans-serif;
+  color: #1c304a;
   margin: 0;
 }
 
@@ -92,8 +95,9 @@ svg {
 .logos {
   /* border: solid; */
   /* font-size: 1rem; */
-  grid-column: 3;
-  grid-row: 1;
+  display: grid;
+  grid-template-columns: 3;
+  grid-template-rows: 1;
   background-color: #00ADD5;
   grid-area: logos;
 }
@@ -138,10 +142,17 @@ svg {
 }
 
 .chart-title {
-  background: #c1c3d4;
+  background: #046b99;
+  color: #FFFAE2;
+  padding: 0.5em 0.5em;
   /* background-color: #70bf40;  */
   grid-area: charttitle;
   /* border: solid; */
+}
+
+.chart-title h2 {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFAE2;
 }
 
 /* .instruct {
@@ -173,9 +184,17 @@ svg {
   grid-area: cards;
 }
 
-.chart-info {
+.chart-info
+{
   /* border: solid; */
+  color: #FFFAE2;
+  background: #046b99;
+  padding: 0.5em 0.5em;
   grid-area: chartinfo;
+}
+
+.chart-info h4{
+    color: #FFFAE2;
 }
 
 .chart-display {
@@ -188,10 +207,14 @@ svg {
 } */
 
 .map-title {
+  /* background:  #FFFAE2; */
+  font-family: 'Open Sans', sans-serif;
+  background:  #9fd5e3;
+  color: #046b99;
+  padding: 0.5em 0.5em;
   /* background-color: #70bf40;  */
-  background: #c1c3d4;
-  border: solid;
-  font-weight: bold;
+  /* border: solid;
+  font-weight: bold; */
   /* font-size: 1rem; */
   /* padding-top: 20px;
   padding-left: 20px;
@@ -201,9 +224,17 @@ svg {
   grid-area: maptitle;
 }
 
-.map-info {
-  border: solid;
+.map-info
+{
+  /* border: solid; */
+  color: #FFFAE2;
+  background: #046b99;
+  padding: 0.5em 0.5em;
   grid-area: mapinfo;
+}
+
+.map-info h4{
+    color: #FFFAE2;
 }
 
 .map-display {
@@ -237,9 +268,11 @@ svg {
 } */
 
 .footer-content {
-  border: solid;
-  background-color: #51a7fa;
-  color: black;
+  /* border: solid; */
+  /* background-color: #51a7fa; */
+  background:   #046b99;
+  color:#9fd5e3;
+  padding: 0.5em 0.5em;
   /* color: #c1c3d4; */
   grid-area: footercontent;
 }
@@ -423,6 +456,7 @@ Cards Grid:
       width: 100%;
     }
   }
+
   /* individual card grid anchor*/
   .card a {
     display: grid;
