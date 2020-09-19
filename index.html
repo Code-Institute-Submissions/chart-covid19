@@ -47,7 +47,7 @@
         <a href="#">
           <div class="logoimg">
             <img
-              src="/assets/images/logo160160c.png"
+              src="assets/images/logo160160c.png"
               alt="Logo Charts for everyone."
             />
           </div>
@@ -88,10 +88,8 @@
     <div class="chart-title">
       <!-- <h1>Charts for Everyone</h1> -->
       <h2>
-        A Multi-line chart of Cumulative Cases for counties for the US State of
-        Massachusetts with a date line-selector.<br />
-        A Choropleth Map of the number of cumulative cases and deaths by US
-        counties for a date selected.
+        A Multi-line chart of COVID19 Cumulative Cases for the US State of
+        Massachusetts Counties with a date line-selector
       </h2>
     </div>
 
@@ -164,12 +162,25 @@
       </li>
     </ul>
 
-    <div class="chart-info">
-      <!-- <h4>
+    <!-- .page-title -->
+    <!-- </section> -->
+
+    <!-- <section class="chart-display"> -->
+    <!-- chart -->
+    <div class="chart-display">
+      <svg id="chart" viewbox="0 0 960 500" width="960" height="500"></svg>
+      <!-- <svg width="960" height="500" id="chart"></svg> -->
+      <!-- <svg id="chart" viewBox="0 0 960 500"></svg> -->
+      <!-- <p class="selected-date-label"></p> -->
+    </div>
+    <!-- </section> -->
+
+    <!-- <div class="chart-info"> -->
+    <!-- <h4>
         Small Device Usage: Tap on the chart area to move the data selection
         line
       </h4> -->
-      <h4>
+    <!-- <p>
         Source:
         <span
           ><a href="https://github.com/nytimes/covid-19-data" target="_blank"
@@ -184,32 +195,31 @@
             >Massachusetts</a
           >
         </span>
-      </h4>
+      </p>
     </div>
-
-    <!-- .page-title -->
-    <!-- </section> -->
-
-    <!-- <section class="chart-display"> -->
-    <!-- chart -->
-    <div class="chart-display">
-      <svg id="chart" viewbox="0 0 960 500" width="960" height="500"></svg>
-      <!-- <svg width="960" height="500" id="chart"></svg> -->
-      <!-- <svg id="chart" viewBox="0 0 960 500"></svg> -->
-      <!-- <p class="selected-date-label"></p> -->
-    </div>
-    <!-- </section> -->
+ -->
 
     <div class="map-title">
-      <h2>Map of Coronovirus Cumulative Number of Cases by US Counties</h2>
+      <!-- A Choropleth Map of the number of cumulative cases and deaths by US
+        counties for a date selected. -->
+      <h2>Map of COVID19 Cumulative Number of Cases by US Counties</h2>
     </div>
+
+    <section class="map-display">
+      <div>
+        <!-- Mike Lambert - D3 Slack -->
+        <svg id="map" viewbox="0 0 100 100" width="960" height="500"></svg>
+        <!-- <svg width="960" height="500" id="map"></svg> -->
+        <!-- <svg id="map" viewBox="0 0 960 500"></svg> -->
+      </div>
+    </section>
 
     <div class="map-info">
       <!-- <h2>
         Pan, Zoom and Hover over county for information
         <p class="selected-date-label"></p>
       </h2> -->
-      <h4>
+      <p>
         Source:
         <span
           ><a href="https://github.com/nytimes/covid-19-data" target="_blank"
@@ -224,18 +234,10 @@
             >Massachusetts</a
           ></span
         >
-      </h4>
+      </p>
     </div>
     <!-- Map -->
 
-    <section class="map-display">
-      <div>
-        <!-- Mike Lambert - D3 Slack -->
-        <svg id="map" viewbox="0 0 100 100" width="960" height="500"></svg>
-        <!-- <svg width="960" height="500" id="map"></svg> -->
-        <!-- <svg id="map" viewBox="0 0 960 500"></svg> -->
-      </div>
-    </section>
     <!-- </main> -->
 
     <footer class="footer-content">

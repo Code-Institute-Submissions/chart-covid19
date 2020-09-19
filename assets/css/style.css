@@ -61,20 +61,20 @@ svg {
 }
 
 /* .masthead, */
-.logos
+.logos,
 /* .page-title, */
 /* .main-content, */
-.chart-title,
 /* .instruct, */
 .step1,
 .step2,
 .step3,
-.chart-info,
+.chart-title,
+/* .chart-info, */
 .chart-display,
 .selected-date-label,
 .map-title,
-.map-info,
 .map-display,
+.map-info,
 .footer-content {
   font-family: "Roboto", sans-serif;
   /* margin-bottom: 1em;
@@ -136,28 +136,30 @@ svg {
 }  
 
 
-.page-title {
+/* .page-title { */
   /* border: solid; */
-  font-size: 1rem;
+  /* font-size: 1rem;
   background-color: #51a7fa;
   grid-area: pagetitle;
-}
+} */
 
 .chart-title {
   background: #046b99;
-  color: #FFFAE2;
+  /* color: #FFFAE2; */
   padding: 0.5em 0.5em;
   /* background-color: #70bf40;  */
-  grid-area: charttitle;
   /* border: solid; */
-  display:flex;
+  grid-area: charttitle;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .chart-title h2 {
   font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
   color: #FFFAE2;
+  text-align: center;
 }
 
 /* .instruct {
@@ -189,10 +191,10 @@ svg {
   grid-area: cards;
 }
 
-.chart-info
-{
+/* .chart-info
+{ */
   /* border: solid; */
-  color: #FFFAE2;
+  /* color: #FFFAE2;
   background: #046b99;
   padding: 0.5em 0.5em;
   grid-area: chartinfo;
@@ -201,9 +203,11 @@ svg {
   justify-content: center;
 }
 
-.chart-info h4{
+.chart-info p {
+    font-size: small;
     color: #FFFAE2;
-}
+} */
+
 
 .chart-display {
   border: solid;
@@ -217,8 +221,7 @@ svg {
 .map-title {
   /* background:  #FFFAE2; */
   font-family: 'Open Sans', sans-serif;
-  background:  #9fd5e3;
-  color: #046b99;
+  background: #046b99;
   padding: 0.5em 0.5em;
   display: flex;
   align-items: center;
@@ -235,11 +238,20 @@ svg {
   grid-area: maptitle;
 }
 
+.map-title h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  color: #FFFAE2;
+  text-align: center;
+}
+
 .map-info
 {
   /* border: solid; */
-  color: #FFFAE2;
-  background: #046b99;
+    background:  #9fd5e3;
+/* color: #FFFAE2;
+  background: #046b99; */
+
   padding: 0.5em 0.5em;
   grid-area: mapinfo;
   display: flex;
@@ -248,8 +260,10 @@ svg {
 
 }
 
-.map-info h4{
-    color: #FFFAE2;
+.map-info p {
+    font-size: small;
+  color: #046b99;
+
 }
 
 .map-display {
@@ -524,22 +538,21 @@ CSS Grid layout for modern browsers:
   display: grid;
   grid-template-columns: 1fr;
   /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
-  grid-template-rows: repeat(12, auto);
+  grid-template-rows: repeat(11, auto);
   grid-template-areas:
     /* "masthead" */
     "logos"
     /* "pagetitle" */
-    "charttitle"
     /* "instruct" */
     "step1"
     "step2"
     "step3"
     "cards"
-    "chartinfo"
+    "charttitle"
     "chartdisplay"
     "maptitle"
-    "mapinfo"
     "mapdisplay"
+    "mapinfo"
     "footercontent";
   grid-gap: 0.1em;
   grid-row-gap: 0.1em;
@@ -563,20 +576,19 @@ CSS Grid layout for modern browsers:
     grid-template-columns: 1fr 1fr 1fr;
     /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
     /* grid-template-rows: auto; */
-    grid-template-rows: repeat(10, auto);
+    grid-template-rows: repeat(9, auto);
     grid-template-areas:
       /* "masthead masthead masthead" */
       "logos logos logos "
       /* "pagetitle pagetitle pagetitle" */
-      "charttitle charttitle charttitle"
       /* "instruct instruct instruct" */
       "step1 step2 step3"
       "cards cards cards"
-      "chartinfo chartinfo chartinfo"
+      "charttitle charttitle charttitle"
       "chartdisplay chartdisplay chartdisplay"
       "maptitle maptitle maptitle"
-      "mapinfo mapinfo mapinfo"
       "mapdisplay mapdisplay mapdisplay"
+      "mapinfo mapinfo mapinfo"
       "footercontent footercontent footercontent";
     grid-gap: 0.1em;
     grid-row-gap: 0.1em;
