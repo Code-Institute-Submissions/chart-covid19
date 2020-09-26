@@ -144,7 +144,7 @@ svg {
 } */
 
 .chart-title {
-  background: #046b99;
+  background: #046b99; 
   /* color: #FFFAE2; */
   padding: 0.5em 0.5em;
   /* background-color: #70bf40;  */
@@ -158,6 +158,7 @@ svg {
 .chart-title h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
+  font-size: larger;
   color: #FFFAE2;
   text-align: center;
 }
@@ -214,9 +215,6 @@ svg {
   grid-area: chartdisplay;
 }
 
-/* .selected-date-label {
-
-} */
 
 .map-title {
   /* background:  #FFFAE2; */
@@ -241,14 +239,24 @@ svg {
 .map-title h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
+  font-size: larger;
   color: #FFFAE2;
   text-align: center;
 }
 
+.selected-date-label  h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: larger;
+  color: #FFFAE2;
+  text-align: center;
+} 
+
 .map-info
 {
   /* border: solid; */
-    background:  #9fd5e3;
+    /* background:  #9fd5e3; */
+    background: #FFFAE2;
 /* color: #FFFAE2;
   background: #046b99; */
 
@@ -261,7 +269,8 @@ svg {
 }
 
 .map-info p {
-    font-size: small;
+  font-size:xx-small;
+  font-weight:bolder;
   color: #046b99;
 
 }
@@ -302,13 +311,14 @@ svg {
   background:   #046b99;
   padding: 0.5em 0.5em;
   display: flex;
-      align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
   /* color: #c1c3d4; */
   grid-area: footercontent;
 }
 
 .footer-content h4 {
+    font-size:xx-small;
   color:#FFFAE2;
 }
 
@@ -369,7 +379,7 @@ text {
 }
 
 .tick text {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   fill: #635f5d;
 }
 
@@ -378,12 +388,12 @@ text {
 }
 
 .axis-label {
-  font-size: 5em;
+  font-size: 3.5em;
   fill: #8e8883;
 }
 
 .title {
-  font-size: 2.7em;
+  font-size: 2.5em;
   fill: #635f5d;
 }
 
@@ -446,7 +456,9 @@ Cards:
 
 .step {
   text-transform: uppercase;
-  color: hsl(201, 63%, 54%);
+  color:  #046b99;
+  /* color: hsl(201, 63%, 54%); */
+  font-weight: bolder;
 }
 
 .stepnum {
@@ -472,9 +484,31 @@ Cards:
 /*--------------------------------------------------------------
 Cards Grid:
 --------------------------------------------------------------*/
+@media screen and (min-width: 300px) {
+
+	.chart-title h2 {
+		font-size: small;
+	}
+
+	.map-title h2 {
+		font-size: small;
+	}
+}
+
+@media screen and (min-width: 600px) {
+
+	.chart-title h2 {
+		font-size: large;
+	}
+
+	.map-title h2 {
+		font-size: large;
+	}
+}
 
 @supports (grid-area: auto) {
   @media screen and (min-width: 600px) {
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -490,6 +524,7 @@ Cards Grid:
     .card a {
       width: 100%;
     }
+
   }
 
   /* individual card grid anchor*/
@@ -525,9 +560,8 @@ Cards Grid:
     grid-column: 2;
     grid-row: 2;
   }
+
 }
-
-
 
 /*--------------------------------------------------------------
 CSS Grid layout for modern browsers:
@@ -607,6 +641,7 @@ CSS Grid layout for modern browsers:
   }
  
 }
+
 
 /* .site {
     display: grid;
