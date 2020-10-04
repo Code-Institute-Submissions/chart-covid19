@@ -52,7 +52,7 @@ const renderProperties = (d) => {
     return "";
   }
 
-  return `County: ${props.county} <br/> Cases: ${props.cases} <br/> Date: ${props.date} <br/> Deaths: ${props.deaths}`;
+  return `County: ${props.county} <br/> Date: ${props.date} <br/> Cases: ${props.cases} <br/> Deaths: ${props.deaths}`;
 };
 
 loadAndProcessData().then((counties) => {
