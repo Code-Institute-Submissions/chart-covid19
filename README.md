@@ -58,79 +58,81 @@ The scope is to solely display the data as-is to the user to support decisions t
 
 #### Personas
 
-* Non-Technical Audience Personas
-  * General Public Individual
-  * Resident of a County
-  * Service Provider Planner
+- Non-Technical Audience Personas
+  - General Public Individual
+  - Resident of a County
+  - Service Provider Planner
 
 #### Features with Interactivity
 
-* Line chart to display the number of COVID19 cases for each county during the pandemic starting in January 2020
-  * User Interface to select a date on a line chart consider a mouseover line for date selection
-https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
-  * Tooltip for each county
+- Line chart to display the number of COVID19 cases for each county during the pandemic starting in January 2020
 
-* Choropleth Map
-  * Zoomable
-  * Pannable
-  * Tooltip
-  * Synchronize with user date selection from line chart
+  - User Interface to select a date on a line chart consider a mouseover line for date selection
+    https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
+  - Tooltip for each county
+
+- Choropleth Map
+  - Zoomable
+  - Pannable
+  - Tooltip
+  - Synchronize with user date selection from line chart
 
 #### Extended Features for future Implementation
 
-* Alert of new Covid19 Cases based on user location default to Boston
-* Notification at the top of the page to publish latest data release information
-* Line Chart with Brush Zoom Axis Label
-https://observablehq.com/@d3/focus-context
-* Bubble Map
-https://observablehq.com/@d3/bubble-map
-* Bubble Map with scrubber and Dropdown
-https://observablehq.com/@mbostock/covid-19-daily-new-cases
+- Alert of new Covid19 Cases based on user location default to Boston
+- Notification at the top of the page to publish latest data release information
+- Line Chart with Brush Zoom Axis Label
+  https://observablehq.com/@d3/focus-context
+- Bubble Map
+  https://observablehq.com/@d3/bubble-map
+- Bubble Map with scrubber and Dropdown
+  https://observablehq.com/@mbostock/covid-19-daily-new-cases
 
-* A bar chart count of Covid19 cases by State or counties
-  * Tooltip
-http://bl.ocks.org/mstanaland/6100713
-  * Zoomable bar chart
-https://observablehq.com/@d3/zoomable-bar-chart
-  * Pannable bar chart
-https://observablehq.com/@d3/pannable-
+- A bar chart count of Covid19 cases by State or counties
+  - Tooltip
+    http://bl.ocks.org/mstanaland/6100713
+  - Zoomable bar chart
+    https://observablehq.com/@d3/zoomable-bar-chart
+  - Pannable bar chart
+    https://observablehq.com/@d3/pannable-
 
 #### Releases
 
 ##### Release 1 (Current)
 
-* Automatic Data load and Processing
-* Multiple Line Chart of Cases for Massachusetts Counties
-* Line to select a specific date
+- Automatic Data load and Processing
+- Multiple Line Chart of Cases for Massachusetts Counties
+- Line to select a specific date
 
 ##### Release 2 (Current)
 
-* Choropleth Map of US Counties
-* Zoomable and Pannable
-* Tooltips to render number of Covid cases by county
+- Choropleth Map of US Counties
+- Zoomable and Pannable
+- Tooltips to render number of Covid cases by county
 
-##### Release 3 (Future)
+##### Release 3 (Current)
 
-* Alert of new Covid19 Cases based on user location default to Boston
-* Notification Message at the top of the page for user information stored in the browser session
+- Synchronize line chart and Choropleth Map using for the date selected by the user on the line chart
+- Highlight the counties and render information in the tooltips for the selected date
+- Access to detail information for Data Source and Date Notes via external hyperlinks
 
 ##### Release 4 (Future)
 
-* Synchronize line chart and Choropleth Map using for the  date selected by the user on the line chart
-* Highlight the counties and render information for the date selected by the user in the tooltips
-* Add Brush Zoom Axis Label to the line chart
+- Alert of new Covid19 Cases based on user location default to Boston
+- Notification Message at the top of the page for user information stored in the browser session
+- Add Brush Zoom Axis Label to the line chart
 
 ##### Release 5 (Future)
 
-* Add bubbles to Choropleth Map sized by counts
-* Add Scrubber with a dropdown to select counties and data for rendering
+- Add bubbles to Choropleth Map sized by counts
+- Add Scrubber with a dropdown to select counties and data for rendering
 
 ##### Release 6 (Future)
 
-* Add bar chart for the counts of Covid19 cases by State or counties
-* Tooltip
-* Zoomable
-* Pannable
+- Add bar chart for the counts of Covid19 cases by State or counties
+- Tooltip
+- Zoomable
+- Pannable
 
 ### Structure Plane
 
@@ -142,29 +144,29 @@ Special Note: Features were scaled back significantly constrained by the steep l
 
 #### Mockups
 
-* [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
-* [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
-* [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
+- [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
+- [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
+- [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
 
 #### Functional Specifications
 
-* Mobile-first design for line chart visibility using the entire device viewport
-* Mechanism for user input simple point and click
-* Tooltip information is visible when rendered
-* Color of lines use d3.schemeAccent for the sorted ordinal representation of counties
-* Dynamic update of chart and information is automatic when new data is released
-* Application components are structured using javascript modules and functions to maximize ease deployment and code maintenance
+- Mobile-first design for line chart visibility using the entire device viewport
+- Mechanism for user input simple point and click
+- Tooltip information is visible when rendered
+- Color of lines use d3.schemeAccent for the sorted ordinal representation of counties
+- Dynamic update of chart and information is automatic when new data is released
+- Application components are structured using javascript modules and functions to maximize ease deployment and code maintenance
 
 #### Functional Requirements excluded due to limitations of limited current knowledge, skills and time available
 
-* Synchronize chart and map when the user selects a period
-* Render alerts to the user of data releases with summary information
-* Enable user interaction to select a period to display data of interest
-* Enable user interaction to choose what information data to display
-* Render messages to the user when unable to access to endpoints
-* Handling missing data and anomalies
-* Application error handling to facilitate capture and report application failures
-* Test Driven Design development approach for a couple of the components using ES6 modules and functions with Travis CI/QUnit
+- Synchronize chart and map when the user selects a period
+- Render alerts to the user of data releases with summary information
+- Enable user interaction to select a period to display data of interest
+- Enable user interaction to choose what information data to display
+- Render messages to the user when unable to access to endpoints
+- Handling missing data and anomalies
+- Application error handling to facilitate capture and report application failures
+- Test Driven Design development approach for a couple of the components using ES6 modules and functions with Travis CI/QUnit
 
 ### Surface Plane - Visual Design
 
@@ -172,32 +174,32 @@ Special Note: Features were scaled back significantly constrained by the steep l
 
 ##### Multiple Line Chart
 
-* Dynamic Data Load
-The user can view the latest data in real-time when information is released and made publicly available.
+- Dynamic Data Load
+  The user can view the latest data in real-time when information is released and made publicly available.
 
-* D3 Line Chart
-The line chart will adjust dynamically to include new data as it is released.
+- D3 Line Chart
+  The line chart will adjust dynamically to include new data as it is released.
 
-* Date Selector
-The user can select a date to view data.
+- Date Selector
+  The user can select a date to view data.
 
 ##### Choropleth Map US Counties
 
-* Choropleth Map Tooltip
-The user can use the mouse to hover over a county to render a tooltip to display data for that county.
+- Choropleth Map Tooltip
+  The user can use the mouse to hover over a county to render a tooltip to display data for that county.
 
-* Choropleth Map by US County
-The user can view data for the latest information when made available.
+- Choropleth Map by US County
+  The user can view data for the latest information when made available.
 
 #### Features Left to Implement
 
-* Handle endpoint access failure with messages rendered to the user
-* Handle data Load and processing error with messages rendered to the user
-* Selector line tooltip for the user can view cases by county for the date selected
-* Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
+- Handle endpoint access failure with messages rendered to the user
+- Handle data Load and processing error with messages rendered to the user
+- Selector line tooltip for the user can view cases by county for the date selected
+- Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
 
 ### Future feature idea
 
-* Alert to provide summary data as of the latest data release
-* Alert to display information based on user data stored in browser session Window.localStorage
-* Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
+- Alert to provide summary data as of the latest data release
+- Alert to display information based on user data stored in browser session Window.localStorage
+- Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
