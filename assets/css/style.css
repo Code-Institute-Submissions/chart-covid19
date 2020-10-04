@@ -268,7 +268,7 @@ svg {
 
 }
 
-.map-info p {
+.map-info h3 {
   font-size:xx-small;
   font-weight:bolder;
   color: #046b99;
@@ -317,8 +317,8 @@ svg {
   grid-area: footercontent;
 }
 
-.footer-content h4 {
-    font-size:xx-small;
+.footer-content h3 {
+  font-size:xx-small;
   color:#FFFAE2;
 }
 
