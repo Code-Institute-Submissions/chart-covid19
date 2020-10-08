@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css?family=Exo|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
@@ -40,18 +47,34 @@ svg {
 }
 
 .logos {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 3;
-  grid-template-rows: 1;
+  -ms-grid-columns: 3;
+  grid-template-columns: 3fr;
+  -ms-grid-rows: 1;
+  grid-template-rows: 1fr;
   background-color: #00add5;
   grid-area: logos;
 }
 
+.logos > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -62,16 +85,28 @@ svg {
 }
 
 .caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .chart-title {
+  -ms-grid-row: 11;
+  -ms-grid-column: 1;
   background: #046b99;
   padding: 0.5em 0.5em;
   grid-area: charttitle;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -84,20 +119,32 @@ svg {
 }
 
 .cards {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
   grid-area: cards;
 }
 
 .chart-display {
+  -ms-grid-row: 13;
+  -ms-grid-column: 1;
   border: solid;
   grid-area: chartdisplay;
 }
 
 .map-title {
+  -ms-grid-row: 15;
+  -ms-grid-column: 1;
   font-family: "Open Sans", sans-serif;
   background: #046b99;
   padding: 0.5em 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   grid-area: maptitle;
 }
@@ -119,11 +166,19 @@ svg {
 }
 
 .map-info {
+  -ms-grid-row: 19;
+  -ms-grid-column: 1;
   background: #fffae2;
   padding: 0.5em 0.5em;
   grid-area: mapinfo;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -134,6 +189,8 @@ svg {
 }
 
 .map-display {
+  -ms-grid-row: 17;
+  -ms-grid-column: 1;
   border: solid;
   grid-area: mapdisplay;
 }
@@ -152,10 +209,18 @@ svg {
 }
 
 .footer-content {
+  -ms-grid-row: 21;
+  -ms-grid-column: 1;
   background: #046b99;
   padding: 0.5em 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   grid-area: footercontent;
 }
@@ -250,6 +315,8 @@ Cards:
 }
 
 .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em;
 }
@@ -262,12 +329,15 @@ Cards:
   background: white;
   border: 1px transparent;
   color: hsl(0, 0%, 5%);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 .card a:focus,
 .card a:hover {
   margin: -5px 5px 5px -5px;
+  -webkit-box-shadow: 5px 5px 0px 0px hsla(0, 0%, 70%, 0.8);
   box-shadow: 5px 5px 0px 0px hsla(0, 0%, 70%, 0.8);
 }
 
@@ -285,14 +355,18 @@ Cards:
 }
 
 .cards h2 {
+  -ms-grid-column: 2;
   grid-column: 2;
+  -ms-grid-row: 1;
   grid-row: 1;
   padding-top: 0.5em;
   align-self: flex-end;
 }
 
 .meta {
+  -ms-grid-column: 2;
   grid-column: 2;
+  -ms-grid-row: 2;
   grid-row: 2;
   padding-bottom: 1em;
 }
@@ -331,6 +405,8 @@ Cards Grid:
     .card {
       margin-bottom: 0;
       /* take up full height of vertical space */
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
 
@@ -354,10 +430,19 @@ Cards Grid:
     grid-column: 1;
     grid-row: 1/3;
     /* flex vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     /* align center */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 
@@ -380,8 +465,12 @@ CSS Grid layout for modern browsers:
 /* Responsive Layout for all browsers */
 
 .site {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  -ms-grid-rows: auto 0.1em auto 0.1em auto 0.1em auto 0.1em auto 0.1em auto
+    0.1em auto 0.1em auto 0.1em auto 0.1em auto 0.1em auto;
   grid-template-rows: repeat(11, auto);
   grid-template-areas:
     "logos"
@@ -402,8 +491,12 @@ CSS Grid layout for modern browsers:
 
 @media screen and (min-width: 600px) {
   .site {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 0.1em 1fr 0.1em 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: auto 0.1em auto 0.1em auto 0.1em auto 0.1em auto 0.1em auto
+      0.1em auto 0.1em auto 0.1em auto;
     grid-template-rows: repeat(9, auto);
     grid-template-areas:
       "logos logos logos "
@@ -418,5 +511,45 @@ CSS Grid layout for modern browsers:
     grid-gap: 0.1em;
     grid-row-gap: 0.1em;
     margin: 0.1em;
+  }
+  .logos {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .chart-title {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .cards {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .chart-display {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .map-title {
+    -ms-grid-row: 11;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .map-info {
+    -ms-grid-row: 15;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .map-display {
+    -ms-grid-row: 13;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .footer-content {
+    -ms-grid-row: 17;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
   }
 }
