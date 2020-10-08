@@ -1,5 +1,4 @@
-// import { feature } from 'topojson';
-
+// Read and Load NY Time Covid19 data for all US Countues
 export const loadAndProcessData = () =>
   Promise.all([
     d3.csv(
