@@ -1,21 +1,3 @@
-// import {
-//     select,
-//     csv,
-//     scaleLinear,
-//     scaleTime,
-//     extent,
-//     axisLeft,
-//     axisBottom,
-//     line,
-//     curveBasis,
-//     nest,
-//     schemeAccent,
-//     descending,
-//     format,
-//     mouse
-// } from 'd3';
-import { parseTime, selectedDate } from "./index.js";
-
 //tooltip
 const tooltip = d3
   .select("body")
@@ -31,7 +13,7 @@ export const lineChart = (selection, props) => {
     title,
     xValue,
     xAxisLabel,
-    circleRadius,
+    // circleRadius,
     yAxisLabel,
     margin,
     width,
@@ -49,20 +31,12 @@ export const lineChart = (selection, props) => {
     .scaleTime()
     .domain(d3.extent(data, xValue))
     .range([0, innerWidth]);
-  // .nice();
-
-  // console.log(xScale.domain());
-  // console.log(xScale.range());
 
   const yScale = d3
     .scaleLinear()
     .domain(d3.extent(data, yValue))
     .range([innerHeight, 0])
     .nice();
-
-  // const colorScale = d3.scaleOrdinal(d3.schemeAccent);
-  // console.log(yScale.domain());
-  // console.log(yScale.range());
 
   const g = selection.selectAll(".container").data([null]);
   const gEnter = g.enter().append("g").attr("class", "container");
@@ -135,12 +109,6 @@ export const lineChart = (selection, props) => {
     .attr("x2", xScale(selectedDate))
     .attr("y2", innerHeight);
 
-  //bandwidth compute width of a single bar
-  // 	g.selectAll('circle').data(data)
-  //   	.enter().append('circle')
-  //   		.attr('cy', d => yScale(yValue(d)))
-  //   		.attr('cx', d => xScale(xValue(d)))
-  //   		.attr('r', circleRadius);
   gEnter
     .append("text")
     .attr("class", "title")
@@ -162,7 +130,6 @@ export const lineChart = (selection, props) => {
       //capture pixel coordinate with date from the xScale
       const hoveredDate = xScale.invert(x);
       const date = hoveredDate.toISOString().split("T")[0];
-      console.log(hoveredDate);
       setSelectedDate(hoveredDate);
 
       if (selectedDateLabel.text() !== date) {
@@ -182,25 +149,3 @@ export const lineChart = (selection, props) => {
       tooltip.html(null);
     });
 };
-
-// .on("mouseout", function () {
-//   div.transition().duration(500).style("opacity", 0);
-//   div.html(null);
-// });
-// .on("mouseover", function(d) {
-//     div.transition()
-//         .duration(200)
-//         .style("opacity", .9);
-//     div	.html(formatTime(d.date) + "<br/>"  + d.close)
-//         .style("left", (d3.event.pageX) + "px")
-//         .style("top", (d3.event.pageY - 28) + "px");
-//     })
-// .on("mouseout", function(d) {
-//     div.transition()
-//         .duration(500)
-//         .style("opacity", 0);
-// });
-
-// .on("mouseout", function (d) {
-//   div.transition().duration(500).style("opacity", 0);
-// });

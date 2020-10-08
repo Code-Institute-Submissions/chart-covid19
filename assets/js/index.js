@@ -1,32 +1,8 @@
-// import {
-//     select,
-//     csv,
-//     scaleLinear,
-//     scaleTime,
-//     extent,
-//     axisLeft,
-//     axisBottom,
-//     line,
-//     curveBasis,
-//     nest,
-//     schemeAccent,
-//     descending,
-//     format,
-//     mouse
-// } from 'd3';
 import { readData } from "./loadData.js";
 import { colorLegend } from "./colorLegend.js";
 import { lineChart } from "./lineChart.js";
 
 const svg = d3.select("#chart").attr("viewBox", `0 0 960 500`);
-// const svg = d3.select("#chart").attr("viewBox", `0 0 960 500`);
-
-// const svg = d3
-//   .select("div#container")
-//   //   .append("svg")
-//   .attr("preserveAspectRatio", "xMinYMin meet")
-//   .attr("viewBox", "0 0 960 500")
-//   .classed("svg-content", true);
 
 const colorLegendG = svg.append("g");
 const lineChartG = svg.append("g");
@@ -36,13 +12,13 @@ const height = +svg.attr("height");
 
 export var parseTime = d3.timeParse("%B %d, %Y");
 
-let trentData;
+let trendData;
 // selectedDate
 export let selectedDate = parseTime("June 30, 2020");
 
 const setSelectedDate = (date) => {
   selectedDate = date;
-  render(trentData);
+  render(trendData);
 };
 
 //accessor functions
@@ -54,8 +30,6 @@ const render = (data) => {
   // yValue of the last entry for each county
   const lastYValue = (d) => yValue(d.values[d.values.length - 1]);
 
-  // console.log(lastYValue);
-
   const nested = d3
     .nest()
     .key((d) => d.county)
@@ -63,8 +37,6 @@ const render = (data) => {
     .sort((a, b) => d3.descending(lastYValue(a), lastYValue(b)));
 
   colorScale.domain(nested.map((d) => d.key));
-
-  // console.log(nested);
 
   lineChartG.call(lineChart, {
     colorScale,
@@ -93,25 +65,6 @@ const render = (data) => {
 
 readData().then((d) => {
   console.log(d);
-  trentData = d;
-  render(trentData);
+  trendData = d;
+  render(trendData);
 });
-
-// d3.csv(
-//   "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
-// ).then((loadedData) => {
-//   // console.log(data);
-
-//   const MASSDATA = loadedData.filter(function (d) {
-//     return d.state == "Massachusetts";
-//   });
-
-//   MASSDATA.forEach((d) => {
-//     d.date = new Date(d.date);
-//     d.cases = +d.cases;
-//     d.deaths = +d.deaths;
-//   });
-
-//   trentData = MASSDATA;
-//   render(trentData);
-// });

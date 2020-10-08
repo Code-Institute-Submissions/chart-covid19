@@ -13,5 +13,8 @@ export function readData() {
 
       return massData;
     })
-    .catch((error) => console.log("Error:", error.message));
+    .catch((error) => {
+        console.log(error);
+        console.log("Error:", error.message);
+    });
   }
