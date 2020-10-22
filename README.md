@@ -134,6 +134,22 @@ The scope is to solely display the data as-is to the user to support decisions t
 - Zoomable
 - Pannable
 
+### User Stories Future Enhancements
+
+#### Persona: Service Provider Planner (Future Enhancement)
+
+- As a service provider I want to identify clusters of Covid19 by counties to be able to offer delivery of services
+- As a service provided I want to see the movement of clusters of covid19 cases counties since the outbreak of the pandemic to be able to determine the type of services to offer
+- As a service provider I want to understand the time of the growth and shrinking of clusters by location the system with render a map showing an animation of clusters growth shrinking and expanding
+
+#### Persona: Resident of a County(Future Enhancements)
+
+- As a user I want to be able to select a location and time range to see the trend of Covid19 cases
+- As a user I click on the bar chart on the state and a period and want to see the detail counts the system will render tool-tip with the information or update the legend information
+- As a user I click on the bar chart on the state the system will generate a line chart by counties
+- The user brush over the line chart to view data for a specific period the system will scale the line chart
+- As a user I want to be select a location and be alerted when a new case and deaths appear
+
 ### Structure Plane
 
 Interaction design and Information Architecture
