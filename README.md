@@ -134,15 +134,15 @@ The scope is to solely display the data as-is to the user to support decisions t
 - Zoomable
 - Pannable
 
-### User Stories Future Enhancements
+#### User Stories (Future)
 
-#### Persona: Service Provider Planner (Future Enhancement)
+##### Persona: Service Provider Planner (Future Enhancement)
 
 - As a service provider I want to identify clusters of Covid19 by counties to be able to offer delivery of services
 - As a service provided I want to see the movement of clusters of covid19 cases counties since the outbreak of the pandemic to be able to determine the type of services to offer
 - As a service provider I want to understand the time of the growth and shrinking of clusters by location the system with render a map showing an animation of clusters growth shrinking and expanding
 
-#### Persona: Resident of a County(Future Enhancements)
+##### Persona: Resident of a County(Future Enhancements)
 
 - As a user I want to be able to select a location and time range to see the trend of Covid19 cases
 - As a user I click on the bar chart on the state and a period and want to see the detail counts the system will render tool-tip with the information or update the legend information
@@ -164,7 +164,7 @@ Special Note: Features were scaled back significantly constrained by the steep l
 - [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
 - [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
 
-#### Functional Specifications
+#### Organization of Functionality and Content
 
 - Mobile-first design for line chart visibility using the entire device viewport
 - Mechanism for user input simple point and click
@@ -172,6 +172,31 @@ Special Note: Features were scaled back significantly constrained by the steep l
 - Color of lines use d3.schemeAccent for the sorted ordinal representation of counties
 - Dynamic update of chart and information is automatic when new data is released
 - Application components are structured using javascript modules and functions to maximize ease deployment and code maintenance
+
+#### Interaction Design
+
+- Clear 3 step process on how to interact with the chart to select a date to dynamically set the map to render data for the selected date
+- Publish concise instructions on how to use the chart and map
+- The date selected is captured and displayed in the title of the map
+
+#### Consistent, Predictable
+
+- Data source information is provided as external links in the footer of the map
+- Hover renders tooltips for date selector line and county on the map
+- Zoom and panning uses intuitive mouse drag and scroll for large devices and gestures on small devices
+
+#### Visible
+
+- Tooltip rendering is not obstructed and styled to be visible
+
+#### Learnable
+
+- Clear sections on a single page accessible by scrolling and avoid navigating to different pages
+- Provide minimal instructions to minimize cognitive load
+
+#### Feedback
+
+- Dynamic capture of the date selected by the user and displayed clearly at top of map as feedback to confirm the date selection
 
 #### Functional Requirements excluded due to limitations of limited current knowledge, skills and time available
 
