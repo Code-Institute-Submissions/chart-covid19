@@ -67,8 +67,7 @@ The scope is to solely display the data as-is to the user to support decisions t
 
 - Line chart to display the number of COVID19 cases for each county during the pandemic starting in January 2020
 
-  - User Interface to select a date on a line chart consider a mouseover line for date selection
-    https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
+  - [User Interface to select a date on a line chart consider a mouseover line for date selection](https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91)
   - Tooltip for each county
 
 - Choropleth Map
@@ -81,20 +80,14 @@ The scope is to solely display the data as-is to the user to support decisions t
 
 - Alert of new Covid19 Cases based on user location default to Boston
 - Notification at the top of the page to publish latest data release information
-- Line Chart with Brush Zoom Axis Label
-  https://observablehq.com/@d3/focus-context
-- Bubble Map
-  https://observablehq.com/@d3/bubble-map
-- Bubble Map with scrubber and Dropdown
-  https://observablehq.com/@mbostock/covid-19-daily-new-cases
+- [Line Chart with Brush Zoom Axis Label](https://observablehq.com/@d3/focus-context)
+- [Bubble Map](https://observablehq.com/@d3/bubble-map)
+- [Bubble Map with scrubber and Dropdown](https://observablehq.com/@mbostock/covid-19-daily-new-cases)
 
 - A bar chart count of Covid19 cases by State or counties
-  - Tooltip
-    http://bl.ocks.org/mstanaland/6100713
-  - Zoomable bar chart
-    https://observablehq.com/@d3/zoomable-bar-chart
-  - Pannable bar chart
-    https://observablehq.com/@d3/pannable-
+  - [Tooltip](http://bl.ocks.org/mstanaland/6100713)
+  - [Zoomable bar chart](https://observablehq.com/@d3/zoomable-bar-chart)
+  - [Pannable bar chart](https://observablehq.com/@d3/pannable-chart)
 
 #### Releases
 
@@ -160,9 +153,9 @@ Special Note: Features were scaled back significantly constrained by the steep l
 
 #### Mockups
 
-- [Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
-- [Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
-- [Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
+- ![Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
+- ![Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
+- ![Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
 
 #### Organization of Functionality and Content
 
