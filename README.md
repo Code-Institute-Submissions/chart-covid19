@@ -153,9 +153,12 @@ Special Note: Features were scaled back significantly constrained by the steep l
 
 #### Mockups
 
-- ![Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
-- ![Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
-- ![Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
+- Line Chart
+  ![Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
+- Pannable Chart
+  ![Pannable Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/PannableChartMockup.png)
+- Bubble Map
+  ![Bubble Map Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/BubbleMapMockup.png)
 
 #### Organization of Functionality and Content
 
@@ -191,6 +194,18 @@ Special Note: Features were scaled back significantly constrained by the steep l
 
 - Dynamic capture of the date selected by the user and displayed clearly at top of map as feedback to confirm the date selection
 
+#### Information Architecture
+
+- Single page with a 2 section Dashboard so that user can view information at a glance
+- The map invites user interaction using intuitive mouse actions on computers and hand gestures on mobile devices
+
+#### Principles of Organization
+
+- Logo and title provide a clear purpose for the type of target audience and the specific information presented
+- Clear 3 step user instructions on how to navigate the web page
+- Overview information presented in a multi-line chart above and detail information presented in the interactive map below
+- Footnote has links to the data source and data notes
+
 #### Functional Requirements excluded due to limitations of limited current knowledge, skills and time available
 
 - Synchronize chart and map when the user selects a period
@@ -201,6 +216,123 @@ Special Note: Features were scaled back significantly constrained by the steep l
 - Handling missing data and anomalies
 - Application error handling to facilitate capture and report application failures
 - Test Driven Design development approach for a couple of the components using ES6 modules and functions with Travis CI/QUnit
+
+### Skeleton Plane
+
+#### Visual Elements - Navigation and Interface Design
+
+The focus is to keep the visual elements simple and minimize cognitive overload using a dashboard consisting of an interactive chart and a map.
+
+A single web page with sections will present the information to avoid the need to navigate to a different page to minimize distraction.
+
+Supplemental information on the data source and data notes are available and accessible via hyperlinks to external sites.
+
+Progressive disclosure of information starts with a chart displaying summary information overtime and sorted by order of counts. The user can then select a specific date and proceed to explore the pannable and zoomable map to view detailed county information.
+
+* COVID19 Single Page Dashboard
+
+![COVID19 Chart](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/COVID19.png)
+
+* Line Chart Mockup
+
+![Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
+
+### Visualization Analysis and Design with D3
+
+Utilize the Marks and Channels framework in the design of the D3 chart and map
+
+![Marks and Channels](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/marksChannelsVisualization.png)
+
+Source: Visualization Analysis and Design by Tamara Munzner
+
+##### Color and Fonts
+
+D3 and colorbrewer color schemes were considered together with data visualization Marks and Channels design by Tamara Munzner.
+
+The color schemes available were for up to 12 colors. The colors in combination with the ordinal and graphical positions to differentiate the lines for the counties.
+
+##### Chart
+
+lines and legend - colorScale = d3.scaleOrdinal(d3.schemeAccent);
+
+##### Map
+
+polygon colorScale = d3.scaleOrdinal(d3.schemePaired)
+
+#### Typography
+
+GoogleFont -  font-family: "Roboto", sans-serif;
+
+##### Icons
+
+Font Awesome Icons
+
+#### Utilize CSS Grid to handle D3 framework and SVG  with modern browsers
+
+Unidirectional Data Flow
+![Marks and Channels](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/unidirectionalDataFlow.png)
+
+##### Web Page
+
+* Fonts for Accessibility
+* WCAG Color contrast checker contrast Ratio
+* Chrome Devtool Lighthouse Accessibility
+* Responsive breakpoints 600px and 300px
+
+#### Existing Features
+
+##### Logo, Title and Instructions
+
+At the top of the page, a custom logo with a tag line will introduce the purpose of the dashboard. A  3=step guide will instruct the user on how to interact with the chart and map.
+
+##### Multiple Line Chart
+
+* Dynamic Data Load
+
+  The user can view the latest data in real-time when information is released and made publicly available.
+
+* D3 Line Chart
+
+  The line chart will adjust dynamically to include new data as it is released.
+
+* Date Selector
+
+  The user can select a date to view data.
+
+##### Choropleth Map US Counties
+
+* Choropleth Map Tooltip
+
+  The user can use the mouse to hover over a county to render a tooltip to display data for that county.
+
+* Choropleth Map by US County
+
+  The user can view data for the latest information when made available.
+
+##### Line Chart
+
+* The lines and color legend of the line chart used d3.schemeAccent in combination with the sorted ordinal representation of COVID19 cases by counties
+
+* The color legend for the lines are sorted dynamically based on the counts sorted from highest to lowest
+
+##### Map
+
+* Color of counties use d3.schemePaired to optimize delineation of counties in combination with the coordinates of the counties
+
+#### Features Left to Implement
+
+* Handle endpoint access failure with messages rendered to the user
+* Handle data Load and processing error with messages rendered to the user
+* Selector line tooltip for the user can view cases by county for the date selected
+* Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
+
+### Future feature idea
+
+* Alert to provide summary data as of the latest data release
+* Alert to display information based on user data stored in browser session Window.localStorage
+* Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
+* Add Modal pages with annotated diagrams and gifs provide detail steps and explain how to use chart and map
+* Render Data Source and Notes hyperlinks as modal pages instead of using a seperate browser tab
 
 ### Surface Plane - Visual Design
 
