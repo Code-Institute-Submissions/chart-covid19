@@ -1,5 +1,9 @@
 # Chart Covid19 Pandemic Cases
 
+[View the live project here.](https://ngiappuoykoh.github.io/chart-covid19/index.html)
+
+![Multidevice Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/multidevicemockup.png)
+
 Interactive Chart to display the trend of the number of Covid19 cases by US County during the pandemic. The data is provided by the New York Times and updated daily and automatically reflected in a chart usingD3 Data-Driven Documents.
 
 The idea is to report realtime data with a simple focus on Covid19 cases trends by US counties for a general audience. It is not a professional chart or dashboard for an audience interested in in-depth analysis.
@@ -229,11 +233,11 @@ Supplemental information on the data source and data notes are available and acc
 
 Progressive disclosure of information starts with a chart displaying summary information overtime and sorted by order of counts. The user can then select a specific date and proceed to explore the pannable and zoomable map to view detailed county information.
 
-* COVID19 Single Page Dashboard
+- COVID19 Single Page Dashboard
 
 ![COVID19 Chart](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/COVID19.png)
 
-* Line Chart Mockup
+- Line Chart Mockup
 
 ![Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
 
@@ -261,78 +265,78 @@ polygon colorScale = d3.scaleOrdinal(d3.schemePaired)
 
 #### Typography
 
-GoogleFont -  font-family: "Roboto", sans-serif;
+GoogleFont - font-family: "Roboto", sans-serif;
 
 ##### Icons
 
 Font Awesome Icons
 
-#### Utilize CSS Grid to handle D3 framework and SVG  with modern browsers
+#### Utilize CSS Grid to handle D3 framework and SVG with modern browsers
 
 Unidirectional Data Flow
 ![Marks and Channels](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/unidirectionalDataFlow.png)
 
 ##### Web Page
 
-* Fonts for Accessibility
-* WCAG Color contrast checker contrast Ratio
-* Chrome Devtool Lighthouse Accessibility
-* Responsive breakpoints 600px and 300px
+- Fonts for Accessibility
+- WCAG Color contrast checker contrast Ratio
+- Chrome Devtool Lighthouse Accessibility
+- Responsive breakpoints 600px and 300px
 
 #### Existing Features
 
 ##### Logo, Title and Instructions
 
-At the top of the page, a custom logo with a tag line will introduce the purpose of the dashboard. A  3=step guide will instruct the user on how to interact with the chart and map.
+At the top of the page, a custom logo with a tag line will introduce the purpose of the dashboard. A 3-step guide will instruct the user on how to interact with the chart and map.
 
 ##### Multiple Line Chart
 
-* Dynamic Data Load
+- Dynamic Data Load
 
   The user can view the latest data in real-time when information is released and made publicly available.
 
-* D3 Line Chart
+- D3 Line Chart
 
   The line chart will adjust dynamically to include new data as it is released.
 
-* Date Selector
+- Date Selector
 
   The user can select a date to view data.
 
 ##### Choropleth Map US Counties
 
-* Choropleth Map Tooltip
+- Choropleth Map Tooltip
 
   The user can use the mouse to hover over a county to render a tooltip to display data for that county.
 
-* Choropleth Map by US County
+- Choropleth Map by US County
 
   The user can view data for the latest information when made available.
 
 ##### Line Chart
 
-* The lines and color legend of the line chart used d3.schemeAccent in combination with the sorted ordinal representation of COVID19 cases by counties
+- The lines and color legend of the line chart used d3.schemeAccent in combination with the sorted ordinal representation of COVID19 cases by counties
 
-* The color legend for the lines are sorted dynamically based on the counts sorted from highest to lowest
+- The color legend for the lines are sorted dynamically based on the counts sorted from highest to lowest
 
 ##### Map
 
-* Color of counties use d3.schemePaired to optimize delineation of counties in combination with the coordinates of the counties
+- Color of counties use d3.schemePaired to optimize delineation of counties in combination with the coordinates of the counties
 
 #### Features Left to Implement
 
-* Handle endpoint access failure with messages rendered to the user
-* Handle data Load and processing error with messages rendered to the user
-* Selector line tooltip for the user can view cases by county for the date selected
-* Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
+- Handle endpoint access failure with messages rendered to the user
+- Handle data Load and processing error with messages rendered to the user
+- Selector line tooltip for the user can view cases by county for the date selected
+- Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
 
 ### Future feature idea
 
-* Alert to provide summary data as of the latest data release
-* Alert to display information based on user data stored in browser session Window.localStorage
-* Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
-* Add Modal pages with annotated diagrams and gifs provide detail steps and explain how to use chart and map
-* Render Data Source and Notes hyperlinks as modal pages instead of using a seperate browser tab
+- Alert to provide summary data as of the latest data release
+- Alert to display information based on user data stored in browser session Window.localStorage
+- Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
+- Add Modal pages with annotated diagrams and gifs provide detail steps and explain how to use chart and map
+- Render Data Source and Notes hyperlinks as modal pages instead of using a seperate browser tab
 
 ### Surface Plane - Visual Design
 
