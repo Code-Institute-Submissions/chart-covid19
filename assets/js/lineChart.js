@@ -42,7 +42,7 @@ export const lineChart = (selection, props) => {
   const gEnter = g.enter().append("g").attr("class", "container");
   gEnter.merge(g).attr("transform", `translate(${margin.left},${margin.top})`);
 
-  const xAxis = d3.axisBottom(xScale).tickSize(-innerHeight).tickPadding(15);
+  const xAxis = d3.axisBottom(xScale).tickSize(-innerHeight).tickPadding(15).tickFormat(d3.timeFormat("%b"));
 
   const yAxis = d3.axisLeft(yScale).tickSize(-innerWidth).tickPadding(10);
 
