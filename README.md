@@ -2,7 +2,7 @@
 
 [View the live project here.](https://ngiappuoykoh.github.io/chart-covid19/index.html)
 
-![Multidevice Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/multidevicemockup.png)
+![Multidevice Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/multiDeviceMockup.png)
 
 Interactive Chart to display the trend of the number of Covid19 cases by US County during the pandemic. The data is provided by the New York Times and updated daily and automatically reflected in a chart usingD3 Data-Driven Documents.
 
@@ -319,7 +319,7 @@ At the top of the page, a custom logo with a tag line will introduce the purpose
 
 - The color legend for the lines are sorted dynamically based on the counts sorted from highest to lowest
 
-##### Map
+##### Choropleth Map
 
 - Color of counties use d3.schemePaired to optimize delineation of counties in combination with the coordinates of the counties
 
@@ -337,6 +337,7 @@ At the top of the page, a custom logo with a tag line will introduce the purpose
 - Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
 - Add Modal pages with annotated diagrams and gifs provide detail steps and explain how to use chart and map
 - Render Data Source and Notes hyperlinks as modal pages instead of using a seperate browser tab
+- Consider implementing a webpage mode using pattern texture for color blind users as a future enhancement
 
 ### Surface Plane - Visual Design
 
@@ -368,8 +369,86 @@ At the top of the page, a custom logo with a tag line will introduce the purpose
 - Selector line tooltip for the user can view cases by county for the date selected
 - Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
 
-### Future feature idea
+#### Future feature idea
 
 - Alert to provide summary data as of the latest data release
 - Alert to display information based on user data stored in browser session Window.localStorage
 - Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
+
+### Surface Plane - Visual Design
+
+A Single Page with multiple sections designed to be responsive thresholds at 600px and 300px
+
+#### Real-Time Release of Daily Covid19 Counts
+
+- Real-time dynamic update of daily COVID19 data released by the NY York Times
+
+![logoTitleInstruct](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/logoTitleInstruct.png)
+
+#### Logo and Title
+
+- The Logo is designed to reflect the intended target audience who do not require advanced digital and analytics expertise to utilize the dashboard
+
+* The title states the focus and purpose of the charts
+
+#### Simple 3-Steps Instruction
+
+- User instruction section on webpage consists of 3 steps presented using animated cards
+
+#### Multiple Line Chart of COVID19 Cumulative Cases
+
+![multiLineChart](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/multiLineChart.png)
+
+- Cumulative trend of COVID19 cumulative counts by county for the State of Massachusetts
+
+- The chart legend is sorted by the most recent cumulative counties in descending order
+
+- Selector line renders a tooltip for the selected date is synchronized and captured as part of the map title
+
+* Date selected is captured and dynamically displayed with the map title and rendered in the tooltip for selected county
+
+#### Choropleth Map of Covid19 Cases for counties in the US
+
+![choroplethMap](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/choroplethMapUSCounties.png)
+
+![choroplethMapPanZoom](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/choroplethMapPanZoom.png)
+
+- The Choropleth Map interactive features include zooming and panning with tooltip to display the cumulative number of COVID19 cases and deaths for each county
+
+- Map footer includes external hyperlinks to the data source and data notes
+
+#### UX and Accessibility
+
+##### Color Scheme
+
+- Use [Accessible color palette builder](https://toolness.github.io/accessible-color-matrix/)
+
+![Accessible Color Palette](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/accessibleColorPalette.jpg)
+
+##### Font
+
+- GoogleFont Roboto and Open Sans
+
+![Roboto](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/robotoFont.png)
+![Sans Serif](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/sansSerifFont.png)
+
+##### Contrast Ratio
+
+[WCAG Color contrast checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en
+)
+
+#### Data Source and Data Notes
+
+- NY Times COVID19 Data
+
+![New York Times Data](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/dataNYTimes.jpg)
+
+- The COVID Tracking Project 
+![Data Notes](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/dataNotes.jpg)
+
+#### Defensive Programming
+
+- Custom 404 Page
+
+![Custom 404 Page](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/404Page.png)
+
