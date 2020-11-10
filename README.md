@@ -447,6 +447,15 @@ A Single Page with multiple sections designed to be responsive thresholds at 600
 - The COVID Tracking Project
   ![Data Notes](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/dataNotes.jpg)
 
+- Data Elements and Notes
+  [New York Times COVID Cumulative Counts by US Counties](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv)
+
+  - Data Elements : [Date, County, State, Fips, # Cases, # Deaths]
+  - Coronavirus (Covid-19) Data in the United States
+    Known Exceptions: 1day Jumps for Massachusetts
+    On April 24, Massachusetts reported the results of a large number of backlogged tests performed by Quest Diagnostics dating back to April 13, leading to a large one day jump in the number of total cases.
+  - On June 1, Massachusetts started reporting probable cases and deaths in their data. The total number of cases and deaths on that day include probable cases and deaths going back to March 1, leading to a large one day jump in the totals.
+
 #### Defensive Programming
 
 - Custom 404 Page Not Found
@@ -569,3 +578,24 @@ git status
 git add
 git commit
 ```
+
+## References
+
+- [Eloquent Javascript](https://eloquentjavascript.net/index.html)
+- [ECMAScript 6](https://github.com/lukehoban/es6features)
+- [Data Visualization with D3.js - Full Tutorial Course](https://www.youtube.com/watch?v=_8V5o2UHG0E)
+- [D3.js General Update Pattern](https://www.youtube.com/watch?v=vHqTbSd4D4I)
+- [Observable D3 Gallery](https://observablehq.com/@d3/gallery)
+- [U.S. Atlas TopoJSON - counties-albers-10m.json]("https://cdn.jsdelivr.net/npm/us-atlas@3.0.0/counties-albers-10m.json")
+- [Command Line Cartography](https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c)
+- [Let’s Make a Bubble Map](https://bost.ocks.org/mike/bubble-map/)
+- [Bubble Map](https://observablehq.com/@mpfriesen/bubble-map)
+- [Town/county map using d3 and TopoJSON](http://bl.ocks.org/bycoffe/5871252)
+- [Leveling up D3: The Reusable Chart API](https://www.eventbrite.com/engineering/leveling-up-d3-the-reusable-chart-api/)
+- [TDD and test for Handing Data Load statuses testing Travis CI](https://www.eventbrite.com/engineering/leveling-up-d3-events-and-refactorings/)
+- [Introduction To JavaScript Unit Testing](https://www.smashingmagazine.com/2012/06/introduction-to-javascript-unit-testing/)
+- [Testing D3.js With Jasmine](http://busypeoples.github.io/post/testing-d3-with-jasmine/)
+- [Learn Test Driven Development(TDD)](https://github.com/dwyl/learn-tdd)
+- [QUnit](https://api.qunitjs.com/assert/deepEqual/)
+- [JSDOC](https://jsdoc.app/about-getting-started)
+- [Github Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)
