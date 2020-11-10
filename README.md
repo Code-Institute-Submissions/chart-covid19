@@ -434,8 +434,9 @@ A Single Page with multiple sections designed to be responsive thresholds at 600
 
 ##### Contrast Ratio
 
-[WCAG Color contrast checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en
-)
+[WCAG Color contrast checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en)
+
+![Web Page Contrast Checker](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/contrastChecker.jpg)
 
 #### Data Source and Data Notes
 
@@ -443,12 +444,65 @@ A Single Page with multiple sections designed to be responsive thresholds at 600
 
 ![New York Times Data](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/dataNYTimes.jpg)
 
-- The COVID Tracking Project 
-![Data Notes](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/dataNotes.jpg)
+- The COVID Tracking Project
+  ![Data Notes](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/dataNotes.jpg)
 
 #### Defensive Programming
 
-- Custom 404 Page
+- Custom 404 Page Not Found
+
+Notify the user that the web page is not available and provide a link to retry accessing the home page
 
 ![Custom 404 Page](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/404Page.png)
 
+## Technologies Used
+
+- HTML5
+- CSS
+- CSS GRID
+- Javascript
+- SVG
+- D3
+- ES6
+- JSON
+- topoJson
+- GeoJason
+- NodeJS
+- NPM
+
+- GitHub
+- GitHub Projects
+- Git Pages
+
+- Chrome DEV Toool
+- Gitpod
+- Visual Studio Code (VSCode)
+- Balsamiq
+- SnagIt
+
+- Node
+- Travis CI Test runner
+- Testing Framework
+- QUnit Assertion library
+
+Validators
+
+- [CSS Beautifier](https://www.freeformatter.com/css-beautifier.html)
+- [WCAG Color contrast checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en)
+- [Responsive Design Checker](http://ami.responsivedesign.is/)
+- Chrome Dev Tool
+  - Ligthouse Accessibility
+  - JS loaded using dev tool/network
+
+Accessibility Audit
+JS loaded using dev tool/network
+TDD and Test Automation
+
+- QUnit
+- Jarvis CI
+
+Proof of Concept Map
+
+- topoJSON
+- geoJSON
+- React
