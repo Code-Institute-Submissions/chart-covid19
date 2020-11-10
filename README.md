@@ -457,6 +457,8 @@ Notify the user that the web page is not available and provide a link to retry a
 
 ## Technologies Used
 
+### Web DEvelopment
+
 - HTML5
 - CSS
 - CSS GRID
@@ -470,22 +472,28 @@ Notify the user that the web page is not available and provide a link to retry a
 - NodeJS
 - NPM
 
+### Source Code Repository, Version Control and Project Management
+
 - GitHub
 - GitHub Projects
 - Git Pages
 
-- Chrome DEV Toool
+### Development Tools
+
+- Chrome DEV Tool
 - Gitpod
 - Visual Studio Code (VSCode)
 - Balsamiq
 - SnagIt
+
+### Testing and CI/CD
 
 - Node
 - Travis CI Test runner
 - Testing Framework
 - QUnit Assertion library
 
-Validators
+### Validators
 
 - [CSS Beautifier](https://www.freeformatter.com/css-beautifier.html)
 - [WCAG Color contrast checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en)
@@ -494,15 +502,70 @@ Validators
   - Ligthouse Accessibility
   - JS loaded using dev tool/network
 
-Accessibility Audit
+### Accessibility Audit
+
 JS loaded using dev tool/network
 TDD and Test Automation
 
 - QUnit
 - Jarvis CI
 
-Proof of Concept Map
+### Proof of Concept Map Data Processing
 
 - topoJSON
 - geoJSON
 - React
+
+## Deployment
+
+GitHub Pages was used to deploy the project web page.
+
+### Cloning the project repository
+
+1. Navigate to
+
+```
+https://github.com/NgiapPuoyKoh/chart-covid19
+```
+
+2. Click Clone or download
+1. Clone HTTPS
+
+```
+https://github.com/NgiapPuoyKoh/chart-covid19
+```
+
+4. Open git bash(Windows) or Terminal(macOS and Linux)
+1. Change the current working directory to the desired location of the target cloned directory.
+1. Type
+
+```
+git clone HTTPS https://github.com/NgiapPuoyKoh/chart-covid19.git
+```
+
+7. Press enter
+
+### Configure GitHub Pages Site
+
+1. Navigate to the Github remote repository
+
+```
+https://github.com/NgiapPuoyKoh/chart-covid19
+```
+
+2. Click on settings
+3. Scroll down the page to GITHUB Pages section
+4. For the Source select "master branch"
+5. Wait a few minutes and then access the completed project using this link [https://ngiappuoykoh.github.io/chart-covid19/](https://ngiappuoykoh.github.io/chart-covid19/)
+
+```
+https://ngiappuoykoh.github.io/chart-covid19/
+```
+
+Some basic Git commands are:
+
+```
+git status
+git add
+git commit
+```
