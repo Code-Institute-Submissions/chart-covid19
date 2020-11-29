@@ -10,6 +10,35 @@ The idea is to report realtime data with a simple focus on Covid19 cases trends 
 
 The user will be able to select a specific point in time to display the counts at that time. The purpose is to allow users to view the trend as information that may trigger curiosity and support decision making. Engaging as many people with one useful piece of information is vital to individual response to COVID19 in a situation of pandemic information overload.
 
+---
+
+## Contents
+
+- [Chart Covid19 Pandemic Cases](#chart-covid19-pandemic-cases)
+  - [UX](#ux)
+    - [User Stories](#user-stories)
+  - [Development Planes](#development-planes)
+    - [Strategy Plane - User Needs and Business Objective](#strategy-plane---user-needs-and-business-objective)
+    - [Identify Business Goals and Objectives](#identify-business-goals-and-objectives)
+    - [Scope Plane](#scope-plane)
+      - [User Stories (Future)](#user-stories--future-)
+    - [Structure Plane](#structure-plane)
+    - [Skeleton Plane](#skeleton-plane)
+      - [Existing Features](#existing-features)
+      - [Features Left to Implement](#features-left-to-implement)
+    - [Future feature idea](#future-feature-idea)
+    - [Surface Plane - Visual Design](#surface-plane---visual-design)
+  - [Technologies Used](#technologies-used)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+  - [References](#references)
+  - [Content](#content)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
+  - [Disclaimer](#disclaimer)
+
+---
+
 ## UX
 
 > "A dashboard is a visual display of the most important information needed to achieve one or more objectives; consolidated and arranged on a single screen so the information can be monitored at a glance." - Stephen Few Dashboard Confusion Revisited
@@ -241,7 +270,7 @@ Progressive disclosure of information starts with a chart displaying summary inf
 
 ![Line Chart Mockup](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/wireframes/LineChartMockup.jpg)
 
-### Visualization Analysis and Design with D3
+#### Visualization Analysis and Design with D3
 
 Utilize the Marks and Channels framework in the design of the D3 chart and map
 
@@ -267,14 +296,21 @@ polygon colorScale = d3.scaleOrdinal(d3.schemePaired)
 
 GoogleFont - font-family: "Roboto", sans-serif;
 
-##### Icons
+#### Icons
 
 Font Awesome Icons
 
-#### Utilize CSS Grid to handle D3 framework and SVG with modern browsers
+#### CSS Grid
 
-Unidirectional Data Flow
-![Marks and Channels](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/unidirectionalDataFlow.png)
+- Utilize CSS Grid to handle D3 framework and SVG with modern browsers
+
+#### Interactions with Unidirectional Data Flow and General Update Pattern using D3
+
+- Unidirectional Data Flow and D3 General Update Pattern
+  ![Marks and Channels](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/docimages/unidirectionalDataFlow.png)
+
+- [Interactions with Unidirectional Data Flow using D3](https://www.youtube.com/watch?v=yInEqiEwATc)
+- [General Update Pattern of D3](https://www.youtube.com/watch?v=IyIAR65G-GQ)
 
 ##### Web Page
 
@@ -341,42 +377,6 @@ At the top of the page, a custom logo with a tag line will introduce the purpose
 
 ### Surface Plane - Visual Design
 
-#### Existing Features
-
-##### Multiple Line Chart
-
-- Dynamic Data Load
-  The user can view the latest data in real-time when information is released and made publicly available.
-
-- D3 Line Chart
-  The line chart will adjust dynamically to include new data as it is released.
-
-- Date Selector
-  The user can select a date to view data.
-
-##### Choropleth Map US Counties
-
-- Choropleth Map Tooltip
-  The user can use the mouse to hover over a county to render a tooltip to display data for that county.
-
-- Choropleth Map by US County
-  The user can view data for the latest information when made available.
-
-#### Features Left to Implement
-
-- Handle endpoint access failure with messages rendered to the user
-- Handle data Load and processing error with messages rendered to the user
-- Selector line tooltip for the user can view cases by county for the date selected
-- Synchronize the line chart and choropleth map to render the same information for the date selected on the line chart
-
-#### Future feature idea
-
-- Alert to provide summary data as of the latest data release
-- Alert to display information based on user data stored in browser session Window.localStorage
-- Implement a transition to animate the change in the number of cases over the COVID19 Pandemic period
-
-### Surface Plane - Visual Design
-
 A Single Page with multiple sections designed to be responsive thresholds at 600px and 300px
 
 #### Real-Time Release of Daily Covid19 Counts
@@ -416,6 +416,8 @@ A Single Page with multiple sections designed to be responsive thresholds at 600
 - The Choropleth Map interactive features include zooming and panning with tooltip to display the cumulative number of COVID19 cases and deaths for each county
 
 - Map footer includes external hyperlinks to the data source and data notes
+
+![mapFeatures](assets/wireframes/mapFeatures.jpg)
 
 #### UX and Accessibility
 
@@ -466,7 +468,7 @@ Notify the user that the web page is not available and provide a link to retry a
 
 ## Technologies Used
 
-### Web DEvelopment
+### Web Development
 
 - HTML5
 - CSS
@@ -481,6 +483,13 @@ Notify the user that the web page is not available and provide a link to retry a
 - NodeJS
 - NPM
 
+### Image Processing
+
+- [Tinypng](https://tinypng.com/)
+- [Convertio](https://convertio.co/mp4-gif/)
+- [Pixlr](https://pixlr.com/)
+- [Canva](https://www.canva.com/teams/folders)
+
 ### Source Code Repository, Version Control and Project Management
 
 - GitHub
@@ -490,10 +499,12 @@ Notify the user that the web page is not available and provide a link to retry a
 ### Development Tools
 
 - Chrome DEV Tool
+- Firefix Developer Edition
 - Gitpod
 - Visual Studio Code (VSCode)
 - Balsamiq
 - SnagIt
+- [Markdown TOC](https://ecotrust-canada.github.io/markdown-toc/)
 
 ### Testing and CI/CD
 
@@ -508,10 +519,17 @@ Notify the user that the web page is not available and provide a link to retry a
 - [WCAG Color contrast checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en)
 - [Responsive Design Checker](http://ami.responsivedesign.is/)
 - Chrome Dev Tool
-  - Ligthouse Accessibility
   - JS loaded using dev tool/network
+- [Jshint](https://jshint.com/)
 
 ### Accessibility Audit
+
+- Chrome Dev Tool
+  - Ligthouse Accessibility
+
+## Testing
+
+[Testing Documentation here.](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/TESTING.md)
 
 JS loaded using dev tool/network
 TDD and Test Automation
@@ -586,7 +604,7 @@ git commit
 - [Data Visualization with D3.js - Full Tutorial Course](https://www.youtube.com/watch?v=_8V5o2UHG0E)
 - [D3.js General Update Pattern](https://www.youtube.com/watch?v=vHqTbSd4D4I)
 - [Observable D3 Gallery](https://observablehq.com/@d3/gallery)
-- [U.S. Atlas TopoJSON - counties-albers-10m.json]("https://cdn.jsdelivr.net/npm/us-atlas@3.0.0/counties-albers-10m.json")
+- [U.S. Atlas TopoJSON - counties-albers-10m.json](https://cdn.jsdelivr.net/npm/us-atlas@3.0.0/counties-albers-10m.json)
 - [Command Line Cartography](https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c)
 - [Let’s Make a Bubble Map](https://bost.ocks.org/mike/bubble-map/)
 - [Bubble Map](https://observablehq.com/@mpfriesen/bubble-map)
@@ -599,3 +617,28 @@ git commit
 - [QUnit](https://api.qunitjs.com/assert/deepEqual/)
 - [JSDOC](https://jsdoc.app/about-getting-started)
 - [Github Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)
+
+## Content
+
+- The 404 HTML page is from [404 HTML page](http://www.free404.com)
+
+## Credits
+
+- Mentor Guido Cecilio provided technical assistance with resolving advanced D3 features and QUnit
+
+  - Synchronize Date selected and display of data on the Map
+
+  - Implement Mouse Event to trigger tooltip to render county information
+
+  - Implement tooltip for the line selector
+
+  - Provide sample QUnit Unit test script
+
+## Acknowledgements
+
+- Inspiration and the base for this project is from Curran Kelleher Data Visualization with D3.js Full Tutorial Course offered by freeCodeCamp
+- Fellow CI student who took the time to provide feedback and suggestions
+
+## Disclaimer
+
+This project is for educational use only
