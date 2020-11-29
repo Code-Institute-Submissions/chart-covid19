@@ -2,32 +2,18 @@
 
 ## Contents
 
-- [Testing - Chart Covid19 Pandemic Cases](#testing---chart-covid19-pandemic-cases)
-  - [Validators](#validators)
-    - [Javascript Validator](#javascript-validator)
-    - [CSS](#css)
-    - [Accessibility](#accessibility)
-    - [Responsive Web Page](#responsive-web-page)
-    - [404 Error Page with a link back to home page](#404-error-page-with-a-link-back-to-home-page)
-  - [Unit Testing](#unit-testing)
-    - [Data Load Read Data test using Chrome Dev tool console.log](#data-load-read-data-test-using-chrome-dev-tool-consolelog)
-    - [Monitor Dynamic Data Process and Rendering](#monitor-dynamic-data-process-and-rendering)
-  - [Test Driven Development D3](#test-driven-development-d3)
-  - [Website Behavior on different Browsers and Screen Size](#website-behavior-on-different-browsers-and-screen-size)
-  - [End to End Testing](#end-to-end-testing)
-    - [Functional User Stories Test Matrix](#functional-user-stories-test-matrix)
-      - [Test Case 1 Chart data updates when data is released](#test-case-1-chart-data-updates-when-data-is-released)
-      - [Test Case 2 Line Chart Legend](#test-case-2-line-chart-legend)
-      - [Test Case 3 Line chart Legend for counties is sorted by the latest counts](#test-case-3-line-chart-legend-for-counties-is-sorted-by-the-latest-counts)
-      - [Test Case 4 Select a date on a line chart using a mouseover line for date selection](#test-case-4-select-a-date-on-a-line-chart-using-a-mouseover-line-for-date-selection)
-      - [Test Case 5 User zoom and pan map and hover over any county to render covid counts](#test-case-5-user-zoom-and-pan-map-and-hover-over-any-county-to-render-covid-counts)
-      - [Test Case 6 The date is displayed on the map title dynamically and renders data for each county for that date](#test-case-6-the-date-is-displayed-on-the-map-title-dynamically-and-renders-data-for-each-county-for-that-date)
-  - [Bug Resolution](#bug-resolution)
-    - [Page Scrolling not enabled](#page-scrolling-not-enabled)
-    - [Deployment on GitHub pages – 404 issues](#deployment-on-github-pages---404-issues)
-    - [D3 SVG with CSS Grid not responsive](#d3-svg-with-css-grid-not-responsive)
-    - [D3 Line Chart Time Axis Tick Labels Overlapping](#d3-line-chart-time-axis-tick-labels-overlapping)
-  - [Known Limitations](#known-limitations)
+- [Validators](#validators)
+- [Unit Testing](#unit-testing)
+- [Test Driven Development D3](#test-driven-development-d3)
+- [Website Behavior on different Browsers and Screen Size](#website-behavior-on-different-browsers-and-screen-size)
+- [End to End Testing](#end-to-end-testing)
+  - [Functional User Stories Test Matrix](#functional-user-stories-test-matrix)
+- [Bug Resolution](#bug-resolution)
+- [Known Limitations](#known-limitations)
+- [Integration Testing](#integration-testing)
+  - [Automated Test Case using QUnit and Travis CI](#automated-test-case-using-qunit-and-travis-ci)
+  - [Steps to execute and review automated test in Gitpod](#steps-to-execute-and-review-automated-test-in-gitpod)
+  - [QUnit Travis CI GitHub Setup](#qunit-travis-ci-github-setup)
 
 ---
 
@@ -110,6 +96,8 @@
 | 4         | As a user, I want to be able to select a specific date to report the number of cases by location                                  | Select a date on a line chart using a mouseover line for date selection                           | The tooltip renders data for the selected date                                                                              | A user can select the date using the line selector on the chart to set choropleth map information | Hover over different counties using the mouse and tooltip displays the information for the county |
 | 5         | As a user, I want to be able to select a location and get the count of Covid19 cases                                              | User zoom and pan map and hover over any county to render covid counts                            | Zoom and pan functions are working and tooltip display county information by hovering the cursor over the county            | User can zoom and pan using the mouse on a computer and use hand gestures on mobile devices       |
 | 6         | As a user, I want to be able to select a date and have it automatically synchronize with the data displayed on the choropleth map | The date is displayed on the map title dynamically and renders data for each county for that date | The date selected is displayed on the title of the map dynamically with the tooltip data for the counties are for that date |
+| 7         | As a user, I want to be able to access the web using large screen devices                                                         | The page will display as three columns for the instructions section                               | The instruction section has three columns                                                                                   |
+| 8         | As a user, I want to be able to access the web page using mobile devices                                                          | The page displays as a single column for all page sections                                        | The page displays as a single stacked column                                                                                |
 
 #### Test Case 1 Chart data updates when data is released
 
@@ -153,6 +141,18 @@ County Legend Sort Order by Latest CPVID19 Case
 - Validate hyperlinks to external pages for data source and data notes
 
 ![Links to Data Source and Data Notes](/assets/testIssues/linksDataSourceNotes.png)
+
+#### Test Case 7 Responsive Web Page on a Large Screen Device
+
+The page will display as three columns for the instructions section
+
+![Page on Large Screen Device](/assets/testIssues/pageLargeScreen.gif)
+
+#### Test Case 8 Responsive Web Page on a Mobile Device
+
+The page displays as a single column for all page sections
+
+![Page on Mobile Device](/assets/testIssues/pageMobileDevice.gif)
 
 ## Bug Resolution
 
@@ -224,4 +224,64 @@ const xAxis = d3.axisBottom(xScale).tickSize(-innerHeight).tickPadding(15).tickF
 
 ## Known Limitations
 
-- x-axis tick labels will collide with more data so that there is not sufficient space to accommodate the label length. A future fix is to display the tick labels at an angle and reduce the font size
+- x-axis tick labels will begin to collide with more data so that there is not sufficient space to accommodate the label length. A future fix is to display the tick labels at an angle and reduce the font size
+- Rendering of the web page is slow
+- Responsive media query is designed for below and above 600 px threshold. Smaller than 425 px thresholds are not ideal for interacting and rendering the chart and map
+- The date displayed in the map title is dependent on the data source format type
+- CSS Grid is known to have subtle issues with responsiveness on older devices and browsers that require separate styling and HTML page development for those devices and browsers
+
+## Integration Testing
+
+### Automated Test Case using QUnit and Travis CI
+
+#### [loadData.test.js](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/assets/js/loadData.test.js)
+
+- Validate Data is read successfully from the data source
+
+```
+import { readData } from "./loadData.js";
+
+// Test to validate data load has at least one row
+QUnit.test("Test Data Read URL link to New York Times COVID19 Data", function (
+  assert
+) {
+  let promise = readData();
+
+  return promise.then((d) => {
+    assert.ok(Boolean(d.length > 0), "Data Read");
+  });
+});
+```
+
+[Automated Test Results](assets/js/loadData_test.html)
+![loadData_test.html](assets/testIssues/autoTestResults.png)
+
+### Steps to execute and review automated test in Gitpod
+
+- Run python3 -m http.server
+- Open Browser
+- Modify URL add the following to the end
+  ```
+  /loadData_test.html
+  ```
+- Review the test Results
+
+### QUnit Travis CI GitHub Setup
+
+#### [loadData_test.html](https://github.com/NgiapPuoyKoh/chart-covid19/blob/master/loadData_test.html)
+
+- Configure Qunit
+
+```
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <!-- Load the QUnit Testing Framework from CDN - this is the important bit ... -->
+    <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+    <script type="module" src="assets/js/loadData.test.js"></script>
+```
+
+#### GitHub Travis CI Integration
+
+- Github Travis Integration
+
+![githubTravis](assets/testIssues/githubTravis.png)

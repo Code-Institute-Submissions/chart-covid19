@@ -14,7 +14,6 @@
     />
 
     <!-- Load the QUnit CSS file from CDN - Require to display our tests attractively -->
-    <!-- <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css"> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/qunit/2.11.0/qunit.css"
@@ -31,13 +30,6 @@
     <!-- D3 multi line chart -->
     <script type="module" src="assets/js/linechart.js"></script>
     <script type="module" src="assets/js/colorLegend.js"></script>
-    <!-- <script src="assets/js/chart.js"></script> -->
-    <!-- <script>
-        window.onload = function () {
-            readData("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv", "#covid");
-        };
-
-    </script> -->
   </head>
 
   <!-- <body> -->
@@ -55,44 +47,9 @@
     <div id="qunit-fixture"></div>
     <!-- Load the QUnit Testing Framework from CDN - this is the important bit ... -->
     <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
-    <script>
-      // This is what a simple unit test looks like:
-      test("Test URL link to New York Times COVID19 Data", function (assert) {
-        var url =
-          "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
-        assert.equal(
-          url,
-          "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
-        ); // just so we know everything loaded ok
-      });
-      // A failing test will be RED:
-      test("Test Data is returned from URL link to New York Times COVID19 Data ", function (assert) {
-        var http_response = 200; // this should be 0
-        assert.equal(http_response, 200); // we *expect* this to fail
-      });
-
-      test("Data exits", function (assert) {
-        var http_status = 200;
-        assert.equal(http_status, 404);
-      });
-    </script>
+    <script type="module" src="assets/js/loadData.test.js"></script>
 
     <svg width="960" height="500"></svg>
-
-    <!-- chart
-    <div id="chart">
-        <svg>
-
-        </svg>
-    </div>
-    -->
-
-    <!-- map -->
-    <!-- <div>
-        <svg id="map">
-
-        </svg>
-    </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
