@@ -539,9 +539,13 @@ TDD and Test Automation
 
 ### Proof of Concept Map Data Processing
 
+A sandbox github repo was used to devlop proof of concept for accessing external data
+[interactive-frontend-milestone-project ](https://github.com/NgiapPuoyKoh/interactive-frontend-milestone-project) was utilized to conduct proof on concept
+
 - topoJSON
 - geoJSON
 - React
+- SVG
 
 ## Deployment
 
