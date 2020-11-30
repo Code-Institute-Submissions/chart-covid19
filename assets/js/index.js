@@ -64,7 +64,6 @@ const render = (data) => {
 };
 
 readData().then((d) => {
-  console.log(d);
   trendData = d;
   render(trendData);
 });
