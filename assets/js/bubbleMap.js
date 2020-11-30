@@ -17,7 +17,6 @@ const g = svg.append("g");
 
 svg.call(
   d3.zoom().on("zoom", () => {
-    console.log("zoom");
     g.attr("transform", d3.event.transform);
   })
 );
