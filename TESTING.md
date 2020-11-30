@@ -32,10 +32,12 @@
 ### Accessibility
 
 - WCAG Color contrast checker
-  ![WCAG Color contrast checker](assets/wireframes/contrastChecker.jpg)
+
+![WCAG Color contrast checker](assets/wireframes/contrastChecker.jpg)
 
 - [Accessible color palette builder](https://toolness.github.io/accessible-color-matrix/)
-  ![Accessible Color Palette](assets/wireframes/accessibleColorPalette.jpg)
+
+![Accessible Color Palette](assets/wireframes/accessibleColorPalette.jpg)
 
 - Chrome Dev Tool Lighthouse Accessibility Report
   ![Lighthouse Accessibility Report](assets/wireframes/lighthouseAccessibility.jpg)
@@ -96,8 +98,8 @@
 | 4         | As a user, I want to be able to select a specific date to report the number of cases by location                                  | Select a date on a line chart using a mouseover line for date selection                           | The tooltip renders data for the selected date                                                                              | A user can select the date using the line selector on the chart to set choropleth map information | Hover over different counties using the mouse and tooltip displays the information for the county |
 | 5         | As a user, I want to be able to select a location and get the count of Covid19 cases                                              | User zoom and pan map and hover over any county to render covid counts                            | Zoom and pan functions are working and tooltip display county information by hovering the cursor over the county            | User can zoom and pan using the mouse on a computer and use hand gestures on mobile devices       |
 | 6         | As a user, I want to be able to select a date and have it automatically synchronize with the data displayed on the choropleth map | The date is displayed on the map title dynamically and renders data for each county for that date | The date selected is displayed on the title of the map dynamically with the tooltip data for the counties are for that date |
-| 7         | As a user, I want to be able to access the web using large screen devices                                                         | The page will display as three columns for the instructions section                               | The instruction section has three columns                                                                                   |
-| 8         | As a user, I want to be able to access the web page using mobile devices                                                          | The page displays as a single column for all page sections                                        | The page displays as a single stacked column                                                                                |
+| 7         | As a user, I want to be able to access the web using large screen devices                                                         | The page will display as three columns for the instructions section                               | The instruction section has three columns                                                                                   | The page will display as three columns for the instructions section
+| 8         | As a user, I want to be able to access the web page using mobile devices                                                          | The page displays as a single column for all page sections                                        | The page displays as a single stacked column                                                                                | The page displays as a single column for all page sections
 
 #### Test Case 1 Chart data updates when data is released
 
@@ -222,13 +224,22 @@ const xAxis = d3.axisBottom(xScale).tickSize(-innerHeight).tickPadding(15).tickF
   width: fit-content;
 ```
 
-## Known Limitations
+## Known Limitations and Issues
+
+### Application Development
 
 - x-axis tick labels will begin to collide with more data so that there is not sufficient space to accommodate the label length. A future fix is to display the tick labels at an angle and reduce the font size
 - Rendering of the web page is slow
 - Responsive media query is designed for below and above 600 px threshold. Smaller than 425 px thresholds are not ideal for interacting and rendering the chart and map
 - The date displayed in the map title is dependent on the data source format type
-- CSS Grid is known to have subtle issues with responsiveness on older devices and browsers that require separate styling and HTML page development for those devices and browsers
+- CSS Grid is known to have subtle issues with responsiveness on older devices and browsers that require separate styling and HTML page development for those devices and browsers. An example is the text content of the header section is responsive. However, there is no space for the right padding for the text item on small screens. The workaround is to rotate the device to view the page in landscape.
+
+### Git
+
+- Unresolved Git rebase issue for feature-branch while learning to use git branch for this project. I researched the issue and found solutions but not comfortable attempting a fix without messing up the working codebase that is working.
+  CI Support was conulsted for assistance and receive the recommendation to submit the project without resolving the issue.
+  "So git rebase is a really advanced git feature, which can throw some real spanner in the works. In general I don't think it's something that's very recommended. The assessors will take a look at all branches and all commits so there's no worry there regarding your commit history"
+- Travis CI/CD is failing because of the unresolved Git rebase issue. The master branch is not affected.
 
 ## Integration Testing
 
